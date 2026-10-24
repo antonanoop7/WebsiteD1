@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Method – Vertex Academics</title>
+<meta name="description" content="The four-step method behind a 98.65 ATAR: basics, textbook warm-up, exam-style questions and marked timed exams.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#DCE9F5;overflow-x:clip}
+a{color:#0D2347}a:hover{color:#C41E24}
+@keyframes rvUp{from{opacity:0;transform:translateY(64px)}to{opacity:1;transform:none}}
+@keyframes rvL{from{opacity:0;transform:translateX(-90px)}to{opacity:1;transform:none}}
+@keyframes rvR{from{opacity:0;transform:translateX(90px)}to{opacity:1;transform:none}}
+@keyframes rvS{from{opacity:0;transform:scale(.86)}to{opacity:1;transform:none}}
+@keyframes numIn{from{opacity:0;transform:translateY(40px) scale(.6)}to{opacity:1;transform:none}}
+@keyframes heroOut{to{opacity:.1;transform:translateY(-90px)}}
+@keyframes fillText{to{background-position:0 0}}
+@keyframes prog{to{transform:scaleX(1)}}
+@keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+.progress{display:none}
+@media (prefers-reduced-motion: no-preference){@supports (animation-timeline: view()){
+.rv{animation:rvUp linear both;animation-timeline:view();animation-range:entry 0% cover 28%}
+.rv-l{animation:rvL linear both;animation-timeline:view();animation-range:entry 0% cover 30%}
+.rv-r{animation:rvR linear both;animation-timeline:view();animation-range:entry 0% cover 30%}
+.rv-s{animation:rvS linear both;animation-timeline:view();animation-range:entry 0% cover 30%}
+.num-in{animation:numIn linear both;animation-timeline:view();animation-range:entry 20% cover 40%}
+.d1{animation-range:entry 8% cover 34%}
+.d2{animation-range:entry 16% cover 40%}
+.d3{animation-range:entry 24% cover 46%}
+.hero-out{animation:heroOut linear both;animation-timeline:view();animation-range:exit 0% exit 100%}
+.fill-text{background:linear-gradient(90deg,#0D2347 50%,#AEBBD0 50%) 100% 0/200% 100% no-repeat;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:fillText linear both;animation-timeline:view();animation-range:cover 12% cover 50%}
+.fill-dark{background:linear-gradient(90deg,#FFFFFF 50%,#3B4D78 50%) 100% 0/200% 100% no-repeat;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:fillText linear both;animation-timeline:view();animation-range:cover 15% cover 55%}
+.line-grow{transform-origin:50% 0;animation:grow linear both;animation-timeline:view();animation-range:cover 10% cover 70%}
+.progress{display:block;position:fixed;top:0;left:0;right:0;height:4px;transform-origin:0 50%;z-index:30;animation:prog linear both;animation-timeline:scroll(root)}
+}}
+</style>
+</head>
+<body>
+<div style="font-family: 'DM Sans', system-ui, sans-serif; color: #0D2347; background: #DCE9F5; line-height: 1.6; font-size: 1.0625rem; overflow-x: clip">
+<div class="progress" aria-hidden="true" style="background: #C41E24"></div>
+
+<header style="background: #0D2347; position: sticky; top: 0; z-index: 10">
+<nav style="max-width: 1180px; margin: 0 auto; padding: 16px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px">
+<a href="index.html" style="color: #FFFFFF; text-decoration: none; font-weight: 800; font-size: 1.25rem; letter-spacing: -0.01em; display: flex; align-items: center; gap: 10px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FF6B6F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20L12 4l9 16"/><path d="M7.5 20h9"/></svg>Vertex Academics</a>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 22px; font-weight: 500; font-size: 0.97rem">
+<a href="index.html" style="color: #FFFFFF; text-decoration: none; padding: 10px 0; border-bottom: 2px solid transparent">Home</a>
+<a href="method.html" aria-current="page" style="color: #FFFFFF; text-decoration: none; padding: 10px 0; border-bottom: 2px solid #FF6B6F">My Method</a>
+<a href="tutoring.html" style="color: #FFFFFF; text-decoration: none; padding: 10px 0; border-bottom: 2px solid transparent">Tutoring</a>
+<a href="masterclass.html" style="color: #FFFFFF; text-decoration: none; padding: 10px 0; border-bottom: 2px solid transparent">Masterclass</a>
+<a href="calculators.html" style="color: #FFFFFF; text-decoration: none; padding: 10px 0; border-bottom: 2px solid transparent">Calculators</a>
+<a href="contact.html" style="background: #C41E24; color: #FFFFFF; text-decoration: none; padding: 11px 20px; border-radius: 999px; font-weight: 700">Contact</a>
+</div>
+</nav>
+</header>
+
+<section class="hero-out" style="max-width: 1180px; margin: 0 auto; padding: 96px 24px 80px; display: flex; flex-direction: column; gap: 18px">
+<p style="margin: 0; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; color: #C41E24">My method</p>
+<h1 style="margin: 0; font-weight: 800; font-size: clamp(2.4rem, 5.6vw, 4.6rem); line-height: 1.02; letter-spacing: -0.03em; max-width: 54rem">The person who completes the most questions wins.</h1>
+<p style="margin: 0; color: #2C3B5A; font-size: 1.15rem; max-width: 44rem">The answer is genuinely simple. But you have to get the most out of every single question. Here are the four steps I followed for every topic.</p>
+</section>
+
+<section style="max-width: 1180px; margin: 0 auto; padding: 0 24px 120px; display: flex; flex-direction: column; gap: 28px">
+<div class="rv-s" style="background: #FFFFFF; border-radius: 28px; padding: clamp(28px, 4vw, 48px); display: flex; flex-wrap: wrap; align-items: center; gap: 20px 48px">
+<div class="num-in" style="flex: 0 0 auto; font-weight: 800; font-size: clamp(3.4rem, 7vw, 5.5rem); line-height: 0.9; color: #C41E24">01</div>
+<div class="rv-r" style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; line-height: 1.1">Understand the basics perfectly</h2>
+<p style="margin: 0; color: #2C3B5A; font-size: 1.1rem">Get the fundamentals of the topic down properly. Don't talk yourself into thinking you understand when you don't. Everything else is built on this.</p>
+</div>
+</div>
+<div class="rv-s" style="background: #FFFFFF; border-radius: 28px; padding: clamp(28px, 4vw, 48px); display: flex; flex-wrap: wrap; align-items: center; gap: 20px 48px">
+<div class="num-in" style="flex: 0 0 auto; font-weight: 800; font-size: clamp(3.4rem, 7vw, 5.5rem); line-height: 0.9; color: #C41E24">02</div>
+<div class="rv-r" style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; line-height: 1.1">A few textbook questions</h2>
+<p style="margin: 0; color: #2C3B5A; font-size: 1.1rem">Do a couple of questions from your maths textbook to get comfortable with the topic. Don't spend too long here. It's a warm-up, not the main event.</p>
+</div>
+</div>
+<div class="rv-s" style="background: #0D2347; color: #FFFFFF; border-radius: 28px; padding: clamp(36px, 5vw, 64px) clamp(28px, 4vw, 48px); display: flex; flex-wrap: wrap; align-items: center; gap: 20px 48px">
+<div class="num-in" style="flex: 0 0 auto; font-weight: 800; font-size: clamp(3.4rem, 7vw, 5.5rem); line-height: 0.9; color: #FF8A8D">03</div>
+<div class="rv-r" style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<span style="align-self: flex-start; background: #C41E24; color: #FFFFFF; font-weight: 700; font-size: 0.85rem; padding: 4px 12px; border-radius: 999px">90% of your time</span>
+<h2 style="margin: 0; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; line-height: 1.1">Exam-style questions. Not homework.</h2>
+<p style="margin: 0; color: #D5DDEE; font-size: 1.1rem">This is where you should spend most of your time on each topic. Do as many as you can while making sure you understand every one. If you don't understand something, get help. That's where tutors and teachers come in.</p>
+</div>
+</div>
+<div class="rv-s" style="background: #FFFFFF; border-radius: 28px; padding: clamp(28px, 4vw, 48px); display: flex; flex-wrap: wrap; align-items: center; gap: 20px 48px">
+<div class="num-in" style="flex: 0 0 auto; font-weight: 800; font-size: clamp(3.4rem, 7vw, 5.5rem); line-height: 0.9; color: #C41E24">04</div>
+<div class="rv-r" style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; line-height: 1.1">Timed exams, properly marked</h2>
+<p style="margin: 0; color: #2C3B5A; font-size: 1.1rem">Sit timed exams under exam conditions and get them marked by a teacher or tutor. Then work out exactly what you still need to do to perfect your maths.</p>
+</div>
+</div>
+</section>
+
+<section style="background: #0D2347">
+<div style="max-width: 1180px; margin: 0 auto; padding: 150px 24px">
+<p class="fill-dark" style="margin: 0; color: #FFFFFF; font-weight: 800; font-size: clamp(2.2rem, 5.6vw, 4.6rem); line-height: 1.06; letter-spacing: -0.03em">Give it 100%. Sit on the same question for 30 minutes if you have to, trying different methods.</p>
+<p class="rv" style="margin: 32px 0 0; color: #B9C5DC; font-size: 1.1rem">This happens a lot in Extension 2.</p>
+</div>
+</section>
+
+<section style="max-width: 1180px; margin: 0 auto; padding: 120px 24px; display: flex; flex-direction: column; gap: 48px">
+<div class="rv" style="display: flex; flex-direction: column; gap: 12px; max-width: 42rem">
+<p style="margin: 0; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; color: #C41E24">One topic, start to finish</p>
+<h2 style="margin: 0; font-weight: 800; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05; letter-spacing: -0.02em">Stay one step ahead of school</h2>
+</div>
+<div style="display: flex; gap: 28px">
+<div aria-hidden="true" style="flex: none; width: 4px; border-radius: 4px; background: #C9D4E5; position: relative">
+<div class="line-grow" style="position: absolute; inset: 0; border-radius: 4px; background: #C41E24"></div>
+</div>
+<div style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 44px">
+<div class="rv-r" style="display: flex; flex-direction: column; gap: 6px"><span style="font-weight: 700; color: #C41E24">Before school starts the topic</span><h3 style="margin: 0; font-size: 1.4rem">Learn the basics early</h3><p style="margin: 0; color: #2C3B5A; max-width: 40rem">Steps 1 and 2 happen before your teacher gets there.</p></div>
+<div class="rv-r" style="display: flex; flex-direction: column; gap: 6px"><span style="font-weight: 700; color: #C41E24">While it's taught in class</span><h3 style="margin: 0; font-size: 1.4rem">Lessons that reinforce</h3><p style="margin: 0; color: #2C3B5A; max-width: 40rem">Because you've seen it already, class strengthens your understanding and you can ask better questions.</p></div>
+<div class="rv-r" style="display: flex; flex-direction: column; gap: 6px"><span style="font-weight: 700; color: #C41E24">Most of your time</span><h3 style="margin: 0; font-size: 1.4rem">Exam-style questions</h3><p style="margin: 0; color: #2C3B5A; max-width: 40rem">As many as you can, understanding every one, with help between lessons when you get stuck.</p></div>
+<div class="rv-r" style="display: flex; flex-direction: column; gap: 6px"><span style="font-weight: 700; color: #C41E24">End of the topic</span><h3 style="margin: 0; font-size: 1.4rem">Timed and marked</h3><p style="margin: 0; color: #2C3B5A; max-width: 40rem">An exam under real conditions, marked, so you know exactly what's left to fix.</p></div>
+</div>
+</div>
+</section>
+
+<section style="background: #FFFFFF">
+<div style="max-width: 1180px; margin: 0 auto; padding: 120px 24px; display: flex; flex-direction: column; gap: 32px">
+<h2 class="rv-l" style="margin: 0; font-weight: 800; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05; letter-spacing: -0.02em">Things that help</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px">
+<div class="rv" style="border-top: 3px solid #C41E24; padding-top: 16px; display: flex; flex-direction: column; gap: 6px"><h3 style="margin: 0; font-size: 1.15rem">Learn it before school does</h3><p style="margin: 0; color: #2C3B5A">The lesson then reinforces what you already know, and you can ask better questions.</p></div>
+<div class="rv d1" style="border-top: 3px solid #C41E24; padding-top: 16px; display: flex; flex-direction: column; gap: 6px"><h3 style="margin: 0; font-size: 1.15rem">The right people around you</h3><p style="margin: 0; color: #2C3B5A">Study with others who also want to do well, and work through questions together.</p></div>
+<div class="rv d2" style="border-top: 3px solid #C41E24; padding-top: 16px; display: flex; flex-direction: column; gap: 6px"><h3 style="margin: 0; font-size: 1.15rem">Set goals</h3><p style="margin: 0; color: #2C3B5A">Know the mark you want and what you need to do to get it.</p></div>
+</div>
+</div>
+</section>
+
+<section style="max-width: 1180px; margin: 0 auto; padding: 120px 24px; display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: center; justify-content: space-between">
+<p class="fill-text" style="flex: 1 1 520px; min-width: 0; margin: 0; font-size: clamp(1.3rem, 2.2vw, 1.6rem); font-weight: 700; line-height: 1.35; color: #0D2347">This is how I got a 94 in Extension 2 and 96 in Extension 1, and I used it for nearly every subject to get a Band 6 across the board.</p>
+<div class="rv-r" style="display: flex; flex-wrap: wrap; gap: 12px">
+<a href="masterclass.html" style="background: #0D2347; color: #FFFFFF; text-decoration: none; padding: 15px 28px; border-radius: 999px; font-weight: 700">See the Masterclass</a>
+<a href="contact.html" style="background: #C41E24; color: #FFFFFF; text-decoration: none; padding: 15px 28px; border-radius: 999px; font-weight: 700">Try a free lesson</a>
+</div>
+</section>
+
+<footer style="background: #08172F; color: #B9C5DC">
+<div style="max-width: 1180px; margin: 0 auto; padding: 28px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; font-size: 0.93rem">
+<span style="color: #FFFFFF; font-weight: 700">Vertex Academics · HSC Maths with Anton Anoop</span>
+<span>Text 0411 522 420</span>
+</div>
+</footer>
+
+</div>
+</body>
+</html>

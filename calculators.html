@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HSC Mark and ATAR Calculators – Vertex Academics</title>
+<meta name="description" content="Free HSC raw mark to HSC mark converter and ATAR calculator using UAC 2025 scaling data.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#DCE9F5;overflow-x:clip}
+a{color:#0D2347}a:hover{color:#C41E24}
+.field{font:inherit;font-size:1rem;color:#0D2347;background:#FFFFFF;border:1.5px solid #B7C3D8;border-radius:12px;padding:10px 12px;min-height:46px;box-sizing:border-box;width:100%}
+.field:focus{outline:3px solid #9DB4E8;outline-offset:1px;border-color:#0D2347}
+@keyframes rvUp{from{opacity:0;transform:translateY(64px)}to{opacity:1;transform:none}}
+@keyframes heroOut{to{opacity:.1;transform:translateY(-90px)}}
+@keyframes prog{to{transform:scaleX(1)}}
+.progress{display:none}
+@media (prefers-reduced-motion: no-preference){@supports (animation-timeline: view()){
+.rv{animation:rvUp linear both;animation-timeline:view();animation-range:entry 0% cover 28%}
+.hero-out{animation:heroOut linear both;animation-timeline:view();animation-range:exit 0% exit 100%}
+.progress{display:block;position:fixed;top:0;left:0;right:0;height:4px;transform-origin:0 50%;z-index:30;animation:prog linear both;animation-timeline:scroll(root)}
+}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<noscript><p style="padding:24px;font-family:sans-serif">Please turn on JavaScript to use the calculators.</p></noscript>
+<script>
+!function(e,n){"object"==typeof exports&&"undefined"!=typeof module?n(exports):"function"==typeof define&&define.amd?define(["exports"],n):n(e.htmPreact={})}(this,function(e){var n,_,t,o,r,u,l,i={},c=[],f=/acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i;function s(e,n){for(var _ in n)e[_]=n[_];return e}function a(e){var n=e.parentNode;n&&n.removeChild(e)}function p(e,_,t){var o,r,u,l={};for(u in _)"key"==u?o=_[u]:"ref"==u?r=_[u]:l[u]=_[u];if(arguments.length>2&&(l.children=arguments.length>3?n.call(arguments,2):t),"function"==typeof e&&null!=e.defaultProps)for(u in e.defaultProps)void 0===l[u]&&(l[u]=e.defaultProps[u]);return h(e,l,o,r,null)}function h(e,n,o,r,u){var l={type:e,props:n,key:o,ref:r,__k:null,__:null,__b:0,__e:null,__d:void 0,__c:null,__h:null,constructor:void 0,__v:null==u?++t:u};return null!=_.vnode&&_.vnode(l),l}function d(e){return e.children}function v(e,n){this.props=e,this.context=n}function y(e,n){if(null==n)return e.__?y(e.__,e.__.__k.indexOf(e)+1):null;for(var _;n<e.__k.length;n++)if(null!=(_=e.__k[n])&&null!=_.__e)return _.__e;return"function"==typeof e.type?y(e):null}function m(e){var n,_;if(null!=(e=e.__)&&null!=e.__c){for(e.__e=e.__c.base=null,n=0;n<e.__k.length;n++)if(null!=(_=e.__k[n])&&null!=_.__e){e.__e=e.__c.base=_.__e;break}return m(e)}}function g(e){(!e.__d&&(e.__d=!0)&&o.push(e)&&!k.__r++||u!==_.debounceRendering)&&((u=_.debounceRendering)||r)(k)}function k(){for(var e;k.__r=o.length;)e=o.sort(function(e,n){return e.__v.__b-n.__v.__b}),o=[],e.some(function(e){var n,_,t,o,r,u;e.__d&&(r=(o=(n=e).__v).__e,(u=n.__P)&&(_=[],(t=s({},o)).__v=o.__v+1,D(u,o,t,n.__n,void 0!==u.ownerSVGElement,null!=o.__h?[r]:null,_,null==r?y(o):r,o.__h),w(_,o),o.__e!=r&&m(o)))})}function b(e,n,_,t,o,r,u,l,f,s){var a,p,v,m,g,k,b,H=t&&t.__k||c,E=H.length;for(_.__k=[],a=0;a<n.length;a++)if(null!=(m=_.__k[a]=null==(m=n[a])||"boolean"==typeof m?null:"string"==typeof m||"number"==typeof m||"bigint"==typeof m?h(null,m,null,null,m):Array.isArray(m)?h(d,{children:m},null,null,null):m.__b>0?h(m.type,m.props,m.key,null,m.__v):m)){if(m.__=_,m.__b=_.__b+1,null===(v=H[a])||v&&m.key==v.key&&m.type===v.type)H[a]=void 0;else for(p=0;p<E;p++){if((v=H[p])&&m.key==v.key&&m.type===v.type){H[p]=void 0;break}v=null}D(e,m,v=v||i,o,r,u,l,f,s),g=m.__e,(p=m.ref)&&v.ref!=p&&(b||(b=[]),v.ref&&b.push(v.ref,null,m),b.push(p,m.__c||g,m)),null!=g?(null==k&&(k=g),"function"==typeof m.type&&null!=m.__k&&m.__k===v.__k?m.__d=f=C(m,f,e):f=x(e,m,v,H,g,f),s||"option"!==_.type?"function"==typeof _.type&&(_.__d=f):e.value=""):f&&v.__e==f&&f.parentNode!=e&&(f=y(v))}for(_.__e=k,a=E;a--;)null!=H[a]&&("function"==typeof _.type&&null!=H[a].__e&&H[a].__e==_.__d&&(_.__d=y(t,a+1)),A(H[a],H[a]));if(b)for(a=0;a<b.length;a++)U(b[a],b[++a],b[++a])}function C(e,n,_){var t,o;for(t=0;t<e.__k.length;t++)(o=e.__k[t])&&(o.__=e,n="function"==typeof o.type?C(o,n,_):x(_,o,o,e.__k,o.__e,n));return n}function x(e,n,_,t,o,r){var u,l,i;if(void 0!==n.__d)u=n.__d,n.__d=void 0;else if(null==_||o!=r||null==o.parentNode)e:if(null==r||r.parentNode!==e)e.appendChild(o),u=null;else{for(l=r,i=0;(l=l.nextSibling)&&i<t.length;i+=2)if(l==o)break e;e.insertBefore(o,r),u=r}return void 0!==u?u:o.nextSibling}function H(e,n,_){"-"===n[0]?e.setProperty(n,_):e[n]=null==_?"":"number"!=typeof _||f.test(n)?_:_+"px"}function E(e,n,_,t,o){var r;e:if("style"===n)if("string"==typeof _)e.style.cssText=_;else{if("string"==typeof t&&(e.style.cssText=t=""),t)for(n in t)_&&n in _||H(e.style,n,"");if(_)for(n in _)t&&_[n]===t[n]||H(e.style,n,_[n])}else if("o"===n[0]&&"n"===n[1])r=n!==(n=n.replace(/Capture$/,"")),n=n.toLowerCase()in e?n.toLowerCase().slice(2):n.slice(2),e.l||(e.l={}),e.l[n+r]=_,_?t||e.addEventListener(n,r?S:P,r):e.removeEventListener(n,r?S:P,r);else if("dangerouslySetInnerHTML"!==n){if(o)n=n.replace(/xlink[H:h]/,"h").replace(/sName$/,"s");else if("href"!==n&&"list"!==n&&"form"!==n&&"tabIndex"!==n&&"download"!==n&&n in e)try{e[n]=null==_?"":_;break e}catch(e){}"function"==typeof _||(null!=_&&(!1!==_||"a"===n[0]&&"r"===n[1])?e.setAttribute(n,_):e.removeAttribute(n))}}function P(e){this.l[e.type+!1](_.event?_.event(e):e)}function S(e){this.l[e.type+!0](_.event?_.event(e):e)}function D(e,n,t,o,r,u,l,i,c){var f,a,p,h,y,m,g,k,C,x,H,E=n.type;if(void 0!==n.constructor)return null;null!=t.__h&&(c=t.__h,i=n.__e=t.__e,n.__h=null,u=[i]),(f=_.__b)&&f(n);try{e:if("function"==typeof E){if(k=n.props,C=(f=E.contextType)&&o[f.__c],x=f?C?C.props.value:f.__:o,t.__c?g=(a=n.__c=t.__c).__=a.__E:("prototype"in E&&E.prototype.render?n.__c=a=new E(k,x):(n.__c=a=new v(k,x),a.constructor=E,a.render=M),C&&C.sub(a),a.props=k,a.state||(a.state={}),a.context=x,a.__n=o,p=a.__d=!0,a.__h=[]),null==a.__s&&(a.__s=a.state),null!=E.getDerivedStateFromProps&&(a.__s==a.state&&(a.__s=s({},a.__s)),s(a.__s,E.getDerivedStateFromProps(k,a.__s))),h=a.props,y=a.state,p)null==E.getDerivedStateFromProps&&null!=a.componentWillMount&&a.componentWillMount(),null!=a.componentDidMount&&a.__h.push(a.componentDidMount);else{if(null==E.getDerivedStateFromProps&&k!==h&&null!=a.componentWillReceiveProps&&a.componentWillReceiveProps(k,x),!a.__e&&null!=a.shouldComponentUpdate&&!1===a.shouldComponentUpdate(k,a.__s,x)||n.__v===t.__v){a.props=k,a.state=a.__s,n.__v!==t.__v&&(a.__d=!1),a.__v=n,n.__e=t.__e,n.__k=t.__k,n.__k.forEach(function(e){e&&(e.__=n)}),a.__h.length&&l.push(a);break e}null!=a.componentWillUpdate&&a.componentWillUpdate(k,a.__s,x),null!=a.componentDidUpdate&&a.__h.push(function(){a.componentDidUpdate(h,y,m)})}a.context=x,a.props=k,a.state=a.__s,(f=_.__r)&&f(n),a.__d=!1,a.__v=n,a.__P=e,f=a.render(a.props,a.state,a.context),a.state=a.__s,null!=a.getChildContext&&(o=s(s({},o),a.getChildContext())),p||null==a.getSnapshotBeforeUpdate||(m=a.getSnapshotBeforeUpdate(h,y)),H=null!=f&&f.type===d&&null==f.key?f.props.children:f,b(e,Array.isArray(H)?H:[H],n,t,o,r,u,l,i,c),a.base=n.__e,n.__h=null,a.__h.length&&l.push(a),g&&(a.__E=a.__=null),a.__e=!1}else null==u&&n.__v===t.__v?(n.__k=t.__k,n.__e=t.__e):n.__e=T(t.__e,n,t,o,r,u,l,c);(f=_.diffed)&&f(n)}catch(e){n.__v=null,(c||null!=u)&&(n.__e=i,n.__h=!!c,u[u.indexOf(i)]=null),_.__e(e,n,t)}}function w(e,n){_.__c&&_.__c(n,e),e.some(function(n){try{e=n.__h,n.__h=[],e.some(function(e){e.call(n)})}catch(e){_.__e(e,n.__v)}})}function T(e,_,t,o,r,u,l,c){var f,s,p,h=t.props,d=_.props,v=_.type,m=0;if("svg"===v&&(r=!0),null!=u)for(;m<u.length;m++)if((f=u[m])&&(f===e||(v?f.localName==v:3==f.nodeType))){e=f,u[m]=null;break}if(null==e){if(null===v)return document.createTextNode(d);e=r?document.createElementNS("http://www.w3.org/2000/svg",v):document.createElement(v,d.is&&d),u=null,c=!1}if(null===v)h===d||c&&e.data===d||(e.data=d);else{if(u=u&&n.call(e.childNodes),s=(h=t.props||i).dangerouslySetInnerHTML,p=d.dangerouslySetInnerHTML,!c){if(null!=u)for(h={},m=0;m<e.attributes.length;m++)h[e.attributes[m].name]=e.attributes[m].value;(p||s)&&(p&&(s&&p.__html==s.__html||p.__html===e.innerHTML)||(e.innerHTML=p&&p.__html||""))}if(function(e,n,_,t,o){var r;for(r in _)"children"===r||"key"===r||r in n||E(e,r,null,_[r],t);for(r in n)o&&"function"!=typeof n[r]||"children"===r||"key"===r||"value"===r||"checked"===r||_[r]===n[r]||E(e,r,n[r],_[r],t)}(e,d,h,r,c),p)_.__k=[];else if(m=_.props.children,b(e,Array.isArray(m)?m:[m],_,t,o,r&&"foreignObject"!==v,u,l,u?u[0]:t.__k&&y(t,0),c),null!=u)for(m=u.length;m--;)null!=u[m]&&a(u[m]);c||("value"in d&&void 0!==(m=d.value)&&(m!==e.value||"progress"===v&&!m)&&E(e,"value",m,h.value,!1),"checked"in d&&void 0!==(m=d.checked)&&m!==e.checked&&E(e,"checked",m,h.checked,!1))}return e}function U(e,n,t){try{"function"==typeof e?e(n):e.current=n}catch(e){_.__e(e,t)}}function A(e,n,t){var o,r;if(_.unmount&&_.unmount(e),(o=e.ref)&&(o.current&&o.current!==e.__e||U(o,null,n)),null!=(o=e.__c)){if(o.componentWillUnmount)try{o.componentWillUnmount()}catch(e){_.__e(e,n)}o.base=o.__P=null}if(o=e.__k)for(r=0;r<o.length;r++)o[r]&&A(o[r],n,"function"!=typeof e.type);t||null==e.__e||a(e.__e),e.__e=e.__d=void 0}function M(e,n,_){return this.constructor(e,_)}n=c.slice,_={__e:function(e,n){for(var _,t,o;n=n.__;)if((_=n.__c)&&!_.__)try{if((t=_.constructor)&&null!=t.getDerivedStateFromError&&(_.setState(t.getDerivedStateFromError(e)),o=_.__d),null!=_.componentDidCatch&&(_.componentDidCatch(e),o=_.__d),o)return _.__E=_}catch(n){e=n}throw e}},t=0,v.prototype.setState=function(e,n){var _;_=null!=this.__s&&this.__s!==this.state?this.__s:this.__s=s({},this.state),"function"==typeof e&&(e=e(s({},_),this.props)),e&&s(_,e),null!=e&&this.__v&&(n&&this.__h.push(n),g(this))},v.prototype.forceUpdate=function(e){this.__v&&(this.__e=!0,e&&this.__h.push(e),g(this))},v.prototype.render=d,o=[],r="function"==typeof Promise?Promise.prototype.then.bind(Promise.resolve()):setTimeout,k.__r=0,l=0;var F,L,N,W=0,R=[],I=_.__b,O=_.__r,V=_.diffed,q=_.__c,B=_.unmount;function $(e,n){_.__h&&_.__h(L,e,W||n),W=0;var t=L.__H||(L.__H={__:[],__h:[]});return e>=t.__.length&&t.__.push({}),t.__[e]}function j(e){return W=1,G(ee,e)}function G(e,n,_){var t=$(F++,2);return t.t=e,t.__c||(t.__=[_?_(n):ee(void 0,n),function(e){var n=t.t(t.__[0],e);t.__[0]!==n&&(t.__=[n,t.__[1]],t.__c.setState({}))}],t.__c=L),t.__}function z(e,n){var t=$(F++,4);!_.__s&&Z(t.__H,n)&&(t.__=e,t.__H=n,L.__h.push(t))}function J(e,n){var _=$(F++,7);return Z(_.__H,n)&&(_.__=e(),_.__H=n,_.__h=e),_.__}function K(){R.forEach(function(e){if(e.__P)try{e.__H.__h.forEach(X),e.__H.__h.forEach(Y),e.__H.__h=[]}catch(n){e.__H.__h=[],_.__e(n,e.__v)}}),R=[]}_.__b=function(e){L=null,I&&I(e)},_.__r=function(e){O&&O(e),F=0;var n=(L=e.__c).__H;n&&(n.__h.forEach(X),n.__h.forEach(Y),n.__h=[])},_.diffed=function(e){V&&V(e);var n=e.__c;n&&n.__H&&n.__H.__h.length&&(1!==R.push(n)&&N===_.requestAnimationFrame||((N=_.requestAnimationFrame)||function(e){var n,_=function(){clearTimeout(t),Q&&cancelAnimationFrame(n),setTimeout(e)},t=setTimeout(_,100);Q&&(n=requestAnimationFrame(_))})(K)),L=void 0},_.__c=function(e,n){n.some(function(e){try{e.__h.forEach(X),e.__h=e.__h.filter(function(e){return!e.__||Y(e)})}catch(t){n.some(function(e){e.__h&&(e.__h=[])}),n=[],_.__e(t,e.__v)}}),q&&q(e,n)},_.unmount=function(e){B&&B(e);var n=e.__c;if(n&&n.__H)try{n.__H.__.forEach(X)}catch(e){_.__e(e,n.__v)}};var Q="function"==typeof requestAnimationFrame;function X(e){var n=L;"function"==typeof e.__c&&e.__c(),L=n}function Y(e){var n=L;e.__c=e.__(),L=n}function Z(e,n){return!e||e.length!==n.length||n.some(function(n,_){return n!==e[_]})}function ee(e,n){return"function"==typeof n?n(e):n}var ne=function(e,n,_,t){var o;n[0]=0;for(var r=1;r<n.length;r++){var u=n[r++],l=n[r]?(n[0]|=u?1:2,_[n[r++]]):n[++r];3===u?t[0]=l:4===u?t[1]=Object.assign(t[1]||{},l):5===u?(t[1]=t[1]||{})[n[++r]]=l:6===u?t[1][n[++r]]+=l+"":u?(o=e.apply(l,ne(e,l,_,["",null])),t.push(o),l[0]?n[0]|=2:(n[r-2]=0,n[r]=o)):t.push(l)}return t},_e=new Map,te=function(e){var n=_e.get(this);return n||(n=new Map,_e.set(this,n)),(n=ne(this,n.get(e)||(n.set(e,n=function(e){for(var n,_,t=1,o="",r="",u=[0],l=function(e){1===t&&(e||(o=o.replace(/^\s*\n\s*|\s*\n\s*$/g,"")))?u.push(0,e,o):3===t&&(e||o)?(u.push(3,e,o),t=2):2===t&&"..."===o&&e?u.push(4,e,0):2===t&&o&&!e?u.push(5,0,!0,o):t>=5&&((o||!e&&5===t)&&(u.push(t,0,o,_),t=6),e&&(u.push(t,e,0,_),t=6)),o=""},i=0;i<e.length;i++){i&&(1===t&&l(),l(i));for(var c=0;c<e[i].length;c++)n=e[i][c],1===t?"<"===n?(l(),u=[u],t=3):o+=n:4===t?"--"===o&&">"===n?(t=1,o=""):o=n+o[0]:r?n===r?r="":o+=n:'"'===n||"'"===n?r=n:">"===n?(l(),t=1):t&&("="===n?(t=5,_=o,o=""):"/"===n&&(t<5||">"===e[i][c+1])?(l(),3===t&&(u=u[0]),t=u,(u=u[0]).push(2,0,t),t=0):" "===n||"\t"===n||"\n"===n||"\r"===n?(l(),t=2):o+=n),3===t&&"!--"===o&&(t=4,u=u[0])}return l(),u}(e)),n),arguments,[])).length>1?n:n[0]}.bind(p);e.h=p,e.html=te,e.render=function(e,t,o){var r,u,l;_.__&&_.__(e,t),u=(r="function"==typeof o)?null:o&&o.__k||t.__k,l=[],D(t,e=(!r&&o||t).__k=p(d,null,[e]),u||i,i,void 0!==t.ownerSVGElement,!r&&o?[o]:u?null:t.firstChild?n.call(t.childNodes):null,l,!r&&o?o:u?u.__e:t.firstChild,r),w(l,e)},e.Component=v,e.createContext=function(e,n){var _={__c:n="__cC"+l++,__:e,Consumer:function(e,n){return e.children(n)},Provider:function(e){var _,t;return this.getChildContext||(_=[],(t={})[n]=this,this.getChildContext=function(){return t},this.shouldComponentUpdate=function(e){this.props.value!==e.value&&_.some(g)},this.sub=function(e){_.push(e);var n=e.componentWillUnmount;e.componentWillUnmount=function(){_.splice(_.indexOf(e),1),n&&n.call(e)}}),e.children}};return _.Provider.__=_.Consumer.contextType=_},e.useState=j,e.useReducer=G,e.useEffect=function(e,n){var t=$(F++,3);!_.__s&&Z(t.__H,n)&&(t.__=e,t.__H=n,L.__H.__h.push(t))},e.useLayoutEffect=z,e.useRef=function(e){return W=5,J(function(){return{current:e}},[])},e.useImperativeHandle=function(e,n,_){W=6,z(function(){"function"==typeof e?e(n()):e&&(e.current=n())},null==_?_:_.concat(e))},e.useMemo=J,e.useCallback=function(e,n){return W=8,J(function(){return e},n)},e.useContext=function(e){var n=L.context[e.__c],_=$(F++,9);return _.c=e,n?(null==_.__&&(_.__=!0,n.sub(L)),n.props.value):e.__},e.useDebugValue=function(e,n){_.useDebugValue&&_.useDebugValue(n?n(e):e)},e.useErrorBoundary=function(e){var n=$(F++,10),_=j();return n.__=e,L.componentDidCatch||(L.componentDidCatch=function(e){n.__&&n.__(e),_[1](e)}),[_[0],function(){_[1](void 0)}]}});
+
+</script>
+<script>
+(function () {
+var html = htmPreact.html;
+var TEMPLATE = new Function('html', 'v', 'with (v) { return html`' + "<div style=\"font-family: 'DM Sans', system-ui, sans-serif; color: #0D2347; background: #DCE9F5; line-height: 1.6; font-size: 1.0625rem; overflow-x: clip\">\n<div class=\"progress\" aria-hidden=\"true\" style=\"background: ${accent}\"></div>\n\n<header style=\"background: #0D2347; position: sticky; top: 0; z-index: 10\">\n<nav style=\"max-width: 1180px; margin: 0 auto; padding: 16px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px\">\n<a href=\"index.html\" style=\"color: #FFFFFF; text-decoration: none; font-weight: 800; font-size: 1.25rem; letter-spacing: -0.01em; display: flex; align-items: center; gap: 10px\"><svg width=\"26\" height=\"26\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#FF6B6F\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M3 20L12 4l9 16\"/><path d=\"M7.5 20h9\"/></svg>Vertex Academics</a>\n<div style=\"display: flex; flex-wrap: wrap; align-items: center; gap: 4px 22px; font-weight: 500; font-size: 0.97rem\">\n<a href=\"index.html\" style=\"color: #FFFFFF; text-decoration: none; padding: 10px 0; border-bottom: 2px solid transparent\">Home</a>\n<a href=\"method.html\" style=\"color: #FFFFFF; text-decoration: none; padding: 10px 0; border-bottom: 2px solid transparent\">My Method</a>\n<a href=\"tutoring.html\" style=\"color: #FFFFFF; text-decoration: none; padding: 10px 0; border-bottom: 2px solid transparent\">Tutoring</a>\n<a href=\"masterclass.html\" style=\"color: #FFFFFF; text-decoration: none; padding: 10px 0; border-bottom: 2px solid transparent\">Masterclass</a>\n<a href=\"calculators.html\" aria-current=\"page\" style=\"color: #FFFFFF; text-decoration: none; padding: 10px 0; border-bottom: 2px solid #FF6B6F\">Calculators</a>\n<a href=\"contact.html\" style=\"background: ${accent}; color: #FFFFFF; text-decoration: none; padding: 11px 20px; border-radius: 999px; font-weight: 700\">Contact</a>\n</div>\n</nav>\n</header>\n\n<section id=\"top\" class=\"hero-out\" style=\"max-width: 1180px; margin: 0 auto; padding: 72px 24px 40px; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px 32px\">\n<h1 style=\"margin: 0; font-weight: 800; font-size: clamp(2.4rem, 5.6vw, 4.2rem); line-height: 1.02; letter-spacing: -0.03em\">HSC calculators</h1>\n<a href=\"#how-to\" style=\"background: #FFFFFF; color: #0D2347; text-decoration: none; padding: 12px 22px; border-radius: 999px; font-weight: 700; display: flex; align-items: center; gap: 8px\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .8-1 1.5V14\"/><path d=\"M12 17h.01\"/></svg>How to use</a>\n</section>\n\n<section id=\"step1\" style=\"max-width: 1180px; margin: 0 auto; padding: 24px 24px 72px\">\n<div style=\"background: #FFFFFF; border-radius: 28px; padding: clamp(24px, 4vw, 44px); display: flex; flex-direction: column; gap: 28px\">\n<div class=\"rv\" style=\"display: flex; flex-direction: column; gap: 8px\">\n<p style=\"margin: 0; font-weight: 800; font-size: 0.9rem; color: #C41E24\">STEP 1</p>\n<h2 style=\"margin: 0; font-weight: 800; font-size: clamp(1.8rem, 3.4vw, 2.5rem); line-height: 1.1; letter-spacing: -0.02em\">Raw mark to HSC mark</h2></div>\n<div style=\"display: flex; flex-wrap: wrap; gap: 28px\">\n<div style=\"flex: 1 1 420px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; align-content: start\">\n<div style=\"display: flex; flex-direction: column; gap: 6px\">\n<label for=\"cv-subject\" style=\"font-weight: 700; font-size: 0.95rem\">Subject</label>\n<select id=\"cv-subject\" class=\"field\" value=${convSubject} onChange=${setConvSubject}>\n${(rawSubjects).map((s, $index) => html`<option value=${s.name}>${s.name}</option>`)}\n</select>\n</div>\n<div style=\"display: flex; flex-direction: column; gap: 6px\">\n<label for=\"cv-year\" style=\"font-weight: 700; font-size: 0.95rem\">Data from</label>\n<select id=\"cv-year\" class=\"field\" value=${convYear} onChange=${setConvYear}>\n${(yearOptions).map((y, $index) => html`<option value=${y.value}>${y.label}</option>`)}\n</select>\n</div>\n<div style=\"display: flex; flex-direction: column; gap: 6px\">\n<label for=\"cv-raw\" style=\"font-weight: 700; font-size: 0.95rem\">Raw exam mark (%)</label>\n<input id=\"cv-raw\" class=\"field\" type=\"text\" inputmode=\"decimal\" autocomplete=\"off\" placeholder=\"e.g. 78\" aria-invalid=${convRawInvalid} aria-describedby=\"cv-raw-err\" style=\"border-color: ${convRawBorder}\" value=${convRaw} onInput=${setConvRaw} />\n${(convRawHasError) ? html`<p id=\"cv-raw-err\" role=\"alert\" style=\"margin: 0; color: #B42318; font-size: 0.9rem; font-weight: 600\">${convRawError}</p>` : null}\n</div></div>\n<div style=\"flex: 1 1 340px; min-width: 0; background: #0D2347; color: #FFFFFF; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 16px\">\n${(convReady) ? html`\n<div><div style=\"color: #B9C5DC; font-size: 0.95rem\">HSC mark</div><div style=\"font-weight: 800; font-size: clamp(3.2rem, 6vw, 4.2rem); line-height: 1\">${convHsc}</div></div>\n<span style=\"align-self: flex-start; background: #23365F; border-radius: 999px; padding: 4px 12px; font-weight: 700; font-size: 0.9rem\">${convBand}</span>\n${(convSparse) ? html`<p style=\"margin: 0; color: #FFD3A1; font-size: 0.92rem\">Limited data for this mark. Rough estimate.</p>` : null}\n<a href=\"#step2\" onClick=${addConvToAtar} style=\"align-self: flex-start; background: ${accent}; color: #FFFFFF; text-decoration: none; padding: 13px 22px; border-radius: 999px; font-weight: 700\">Add to ATAR calculator ↓</a>\n` : null}\n${(convEmpty) ? html`\n<p style=\"margin: 0; font-weight: 700; font-size: 1.2rem\">Enter your raw mark.</p>\n` : null}\n${(convBlocked) ? html`\n<p style=\"margin: 0; font-weight: 700; font-size: 1.2rem\">Check your raw mark.</p>\n` : null}\n</div>\n</div>\n</div>\n</section>\n\n<section id=\"step2\" style=\"max-width: 1180px; margin: 0 auto; padding: 0 24px 88px\">\n<div style=\"background: #FFFFFF; border-radius: 28px; padding: clamp(24px, 4vw, 44px); display: flex; flex-direction: column; gap: 28px\">\n<div class=\"rv\" style=\"display: flex; flex-direction: column; gap: 8px\">\n<p style=\"margin: 0; font-weight: 800; font-size: 0.9rem; color: #C41E24\">STEP 2</p>\n<h2 style=\"margin: 0; font-weight: 800; font-size: clamp(1.8rem, 3.4vw, 2.5rem); line-height: 1.1; letter-spacing: -0.02em\">ATAR calculator</h2></div>\n<div style=\"display: flex; flex-direction: column; gap: 24px\">\n<div style=\"min-width: 0; display: flex; flex-direction: column; gap: 12px\">\n${(rows).map((row, $index) => html`\n<div style=\"background: #F2F6FB; border-radius: 18px; padding: 14px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px\">\n<div style=\"flex: 1 1 240px; min-width: 0\"><select class=\"field\" aria-label=\"Subject\" aria-invalid=${row.courseInvalid} style=\"border-color: ${row.courseBorder}\" value=${row.course} onChange=${row.setCourse}><option value=\"\">Choose a subject</option>${(courseOptions).map((c, $index) => html`<option value=${c.name}>${c.label}</option>`)}</select></div>\n<div style=\"flex: 0 0 120px\"><input class=\"field\" type=\"text\" inputmode=\"numeric\" autocomplete=\"off\" aria-label=\"HSC mark\" aria-invalid=${row.markInvalid} style=\"border-color: ${row.markBorder}\" value=${row.mark} onInput=${row.setMark} /></div>\n<button type=\"button\" aria-label=\"Remove subject\" onClick=${row.remove} style=\"flex: none; width: 46px; height: 46px; border: 0; border-radius: 12px; background: #FFFFFF; color: #0D2347; cursor: pointer; display: flex; align-items: center; justify-content: center\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" aria-hidden=\"true\"><path d=\"M6 6l12 12M18 6L6 18\"/></svg></button>\n${(row.hasError) ? html`<div role=\"alert\" style=\"flex: 1 1 100%; font-size: 0.9rem; font-weight: 600; color: #B42318\">${row.error}</div>` : null}\n${(row.noError) ? html`<div style=\"flex: 1 1 100%; font-size: 0.9rem; color: #4A5573\">${row.info}</div>` : null}\n</div>\n`)}\n<button type=\"button\" onClick=${addRow} style=\"align-self: flex-start; font: inherit; font-weight: 700; background: #FFFFFF; color: #0D2347; border: 1.5px dashed #9FB2CF; border-radius: 999px; padding: 12px 22px; min-height: 46px; cursor: pointer\">+ Add a subject</button>\n</div>\n<div style=\"min-width: 0; background: #0D2347; color: #FFFFFF; border-radius: 24px; padding: 24px 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 40px\">\n<div style=\"display: flex; flex-direction: column; gap: 4px\">\n<div style=\"color: #B9C5DC; font-size: 0.95rem\">Estimated ATAR</div>\n<div style=\"font-weight: 800; font-size: clamp(3.4rem, 7vw, 4.6rem); line-height: 1; letter-spacing: -0.02em\">${atarText}</div>\n</div>\n<div style=\"flex: 1 1 280px; min-width: 0; display: flex; flex-direction: column; gap: 6px\">\n<p style=\"margin: 0; color: #D5DDEE\">${atarNote}</p>\n<div style=\"color: #B9C5DC; font-size: 0.95rem\">${unitsText}</div>\n</div>\n</div>\n</div>\n${(hasBreakdown) ? html`\n<div style=\"display: flex; flex-direction: column; gap: 16px\">\n<h3 style=\"margin: 0; font-size: 1.4rem; font-weight: 800\">Your subjects</h3>\n<div style=\"display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px\">\n${(breakdown).map((b, $index) => html`\n<div style=\"border: 1.5px solid #DCE3EE; border-radius: 20px; padding: 18px 20px; display: flex; flex-direction: column; gap: 14px; background: #FFFFFF\">\n<div style=\"display: flex; justify-content: space-between; align-items: flex-start; gap: 12px\">\n<div style=\"font-weight: 800; font-size: 1.05rem; letter-spacing: 0.02em; text-transform: uppercase; line-height: 1.3\">${b.name}</div>\n<span style=\"flex: none; background: #EEF1F6; border-radius: 999px; padding: 2px 10px; font-weight: 700; font-size: 0.85rem\">${b.band}</span>\n</div>\n<div style=\"display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 8px\">\n<div style=\"display: flex; flex-direction: column; align-items: center; gap: 2px\">\n<div style=\"display: flex; align-items: center; gap: 2px\">\n<button type=\"button\" aria-label=\"Lower ${b.name} mark by 1\" onClick=${b.dec} style=\"width: 44px; height: 44px; border: 0; background: transparent; color: #C98A00; cursor: pointer; display: flex; align-items: center; justify-content: center\"><svg width=\"14\" height=\"16\" viewBox=\"0 0 14 16\" aria-hidden=\"true\"><path d=\"M12 1L2 8l10 7z\" fill=\"currentColor\"/></svg></button>\n<span style=\"font-weight: 800; font-size: 2.1rem; line-height: 1; color: #B07800; min-width: 2.4ch; text-align: center\">${b.mark}</span>\n<button type=\"button\" aria-label=\"Raise ${b.name} mark by 1\" onClick=${b.inc} style=\"width: 44px; height: 44px; border: 0; background: transparent; color: #C98A00; cursor: pointer; display: flex; align-items: center; justify-content: center\"><svg width=\"14\" height=\"16\" viewBox=\"0 0 14 16\" aria-hidden=\"true\"><path d=\"M2 1l10 7-10 7z\" fill=\"currentColor\"/></svg></button>\n</div>\n<span style=\"font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; color: #4A5573\">HSC MARK</span>\n</div>\n<div style=\"display: flex; flex-direction: column; align-items: center; gap: 2px\">\n<div style=\"display: flex; align-items: center; gap: 0\">\n<button type=\"button\" aria-label=\"Lower ${b.name} percentile\" onClick=${b.pctDec} style=\"width: 36px; height: 44px; border: 0; background: transparent; color: #2448C9; cursor: pointer; display: flex; align-items: center; justify-content: center\"><svg width=\"12\" height=\"14\" viewBox=\"0 0 14 16\" aria-hidden=\"true\"><path d=\"M12 1L2 8l10 7z\" fill=\"currentColor\"/></svg></button>\n<span style=\"font-weight: 800; font-size: 1.35rem; line-height: 1; color: #2448C9; min-width: 3.4ch; text-align: center\">${b.pct}</span>\n<button type=\"button\" aria-label=\"Raise ${b.name} percentile\" onClick=${b.pctInc} style=\"width: 36px; height: 44px; border: 0; background: transparent; color: #2448C9; cursor: pointer; display: flex; align-items: center; justify-content: center\"><svg width=\"12\" height=\"14\" viewBox=\"0 0 14 16\" aria-hidden=\"true\"><path d=\"M2 1l10 7-10 7z\" fill=\"currentColor\"/></svg></button>\n</div>\n<span style=\"font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; color: #4A5573\">PERCENTILE</span>\n</div>\n<div style=\"display: flex; flex-direction: column; align-items: flex-end; gap: 2px\">\n<div style=\"display: flex; align-items: center; gap: 10px\">\n<svg width=\"40\" height=\"40\" viewBox=\"0 0 40 40\" role=\"img\" aria-label=${b.statusText}><circle cx=\"20\" cy=\"20\" r=\"16\" fill=\"none\" stroke=\"#E6EBF3\" stroke-width=\"5\"/><circle cx=\"20\" cy=\"20\" r=\"16\" fill=\"none\" stroke=${b.ringColor} stroke-width=\"5\" stroke-linecap=\"round\" stroke-dasharray=${b.dash} transform=\"rotate(-90 20 20)\"/></svg>\n<span style=\"font-weight: 800; font-size: 2.1rem; line-height: 1\">${b.contribution}</span>\n</div>\n<span style=\"font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; color: #4A5573\">ATAR CONTRIBUTION</span>\n</div>\n</div>\n</div>\n`)}\n</div>\n<div style=\"display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 0.9rem; color: #4A5573\">\n<span style=\"display: flex; align-items: center; gap: 6px\"><span aria-hidden=\"true\" style=\"width: 10px; height: 10px; border-radius: 999px; background: #1F9D55\"></span>Boosting</span>\n<span style=\"display: flex; align-items: center; gap: 6px\"><span aria-hidden=\"true\" style=\"width: 10px; height: 10px; border-radius: 999px; background: #E0A400\"></span>Close</span>\n<span style=\"display: flex; align-items: center; gap: 6px\"><span aria-hidden=\"true\" style=\"width: 10px; height: 10px; border-radius: 999px; background: #D63B2F\"></span>Dragging down</span>\n<span style=\"display: flex; align-items: center; gap: 6px\"><span aria-hidden=\"true\" style=\"width: 10px; height: 10px; border-radius: 999px; background: #9AA6BC\"></span>Not counted</span>\n</div>\n</div>\n` : null}\n</div>\n</section>\n\n<section id=\"how-to\" style=\"max-width: 1180px; margin: 0 auto; padding: 0 24px 88px\">\n<div style=\"background: #FFFFFF; border-radius: 28px; padding: clamp(24px, 4vw, 44px); display: flex; flex-direction: column; gap: 24px\">\n<div style=\"display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px\">\n<h2 style=\"margin: 0; font-weight: 800; font-size: clamp(1.8rem, 3.4vw, 2.5rem); line-height: 1.1; letter-spacing: -0.02em\">How to use</h2>\n<a href=\"#top\" style=\"font-weight: 700\">Back to top ↑</a>\n</div>\n<ol style=\"margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px\">\n<li style=\"display: flex; flex-direction: column; gap: 6px\"><span style=\"font-weight: 800; font-size: 1.8rem; line-height: 1; color: #C41E24\">1</span><strong>Get your HSC mark</strong><span style=\"color: #2C3B5A\">In Step 1, pick a subject and type your raw exam mark as a percentage.</span></li>\n<li style=\"display: flex; flex-direction: column; gap: 6px\"><span style=\"font-weight: 800; font-size: 1.8rem; line-height: 1; color: #C41E24\">2</span><strong>Add it to the ATAR calculator</strong><span style=\"color: #2C3B5A\">Press \"Add to ATAR calculator\", or type your HSC marks straight into Step 2.</span></li>\n<li style=\"display: flex; flex-direction: column; gap: 6px\"><span style=\"font-weight: 800; font-size: 1.8rem; line-height: 1; color: #C41E24\">3</span><strong>Enter at least 10 units</strong><span style=\"color: #2C3B5A\">Include English. Enter 1-unit courses, like Extension 1, out of 50.</span></li>\n<li style=\"display: flex; flex-direction: column; gap: 6px\"><span style=\"font-weight: 800; font-size: 1.8rem; line-height: 1; color: #C41E24\">4</span><strong>Try different marks</strong><span style=\"color: #2C3B5A\">Use the arrows on each subject. Green boosts your ATAR, yellow is close, red drags it down.</span></li>\n</ol>\n<p style=\"margin: 0; color: #4A5573; font-size: 0.9rem\">Estimates only. Based on <a href=\"https://rawmarks.info/\" target=\"_blank\" rel=\"noopener\">rawmarks.info</a> and UAC's <a href=\"https://uac.edu.au/assets/documents/scaling-reports/preliminary-report-on-the-scaling-of-the-hsc.pdf\" target=\"_blank\" rel=\"noopener\">2025 scaling data</a>.</p>\n</div>\n</section>\n\n<section style=\"max-width: 1180px; margin: 0 auto; padding: 0 24px 100px\">\n<div class=\"rv\" style=\"background: ${accent}; color: #FFFFFF; border-radius: 32px; padding: clamp(32px, 5vw, 60px); display: flex; flex-wrap: wrap; gap: 24px 40px; align-items: center; justify-content: space-between\">\n<div style=\"flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 8px\">\n<h2 style=\"margin: 0; font-weight: 800; font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.05; letter-spacing: -0.02em\">Want a higher number?</h2>\n<p style=\"margin: 0; font-size: 1.1rem\">Set the goal, then take the steps. Your first lesson is free.</p>\n</div>\n<a href=\"contact.html\" style=\"background: #FFFFFF; color: #0D2347; text-decoration: none; padding: 16px 28px; border-radius: 999px; font-weight: 800\">Book a free trial</a>\n</div>\n</section>\n\n<footer style=\"background: #08172F; color: #B9C5DC\">\n<div style=\"max-width: 1180px; margin: 0 auto; padding: 28px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; font-size: 0.93rem\">\n<span style=\"color: #FFFFFF; font-weight: 700\">Vertex Academics · HSC Maths with Anton Anoop</span>\n<span>Text 0411 522 420</span>\n</div>\n</footer>\n\n</div>" + '`; }');
+class DCLogic extends htmPreact.Component { render() { return TEMPLATE(html, this.renderVals()); } }
+
+var A3_ROWS = [
+"Aboriginal Studies,49.0,45.0,41.5,36.5,30.0,42.6,33.8,23.6,11.0,4.0",
+"Agriculture,48.0,45.5,41.5,37.5,32.0,41.6,35.4,27.8,18.7,9.6",
+"Ancient History,47.5,44.5,41.5,37.5,32.0,44.4,37.4,30.9,22.5,13.7",
+"Biology,47.0,44.0,41.5,37.5,33.0,45.3,39.9,34.8,26.7,18.0",
+"Business Studies,48.0,45.0,42.0,37.5,33.0,45.6,39.2,32.6,23.4,15.1",
+"Chemistry,47.5,45.0,42.0,38.0,34.0,47.6,43.6,39.8,33.9,25.8",
+"Community & Family Studies,46.5,43.5,41.0,37.5,34.0,40.4,33.3,26.7,17.8,9.7",
+"Dance,49.0,47.0,44.5,42.5,39.0,44.4,39.6,32.5,24.3,15.2",
+"Design & Technology,48.0,45.0,42.5,39.5,36.5,45.1,37.1,30.8,22.7,15.1",
+"Drama,49.0,47.0,44.5,41.0,37.5,47.2,40.7,33.0,23.4,14.6",
+"Earth & Environmental Science,47.5,44.0,41.5,38.0,33.5,43.4,37.1,31.5,23.2,13.9",
+"Economics,48.0,45.5,43.5,40.0,35.5,47.1,43.0,38.9,33.0,25.0",
+"Engineering Studies,47.5,44.5,40.5,37.0,33.5,45.9,39.6,33.6,26.4,18.6",
+"English Studies Exam,38.0,35.0,33.0,30.0,26.5,25.0,16.4,12.9,8.3,3.6",
+"English Standard,44.0,40.0,38.5,36.5,34.0,39.7,31.5,26.1,20.0,14.5",
+"English Advanced,47.5,45.5,43.5,41.0,39.0,46.9,42.6,38.9,33.7,27.7",
+"English EALD,47.0,43.0,39.5,35.5,32.0,45.3,37.6,30.3,20.0,12.1",
+"English Extension 1,49.0,47.0,46.0,44.0,41.0,48.3,43.9,40.9,36.9,32.2",
+"English Extension 2,49.0,48.0,46.0,42.0,38.0,48.1,44.0,40.5,36.5,31.9",
+"Enterprise Computing,46.5,43.5,40.5,37.5,34.0,46.1,39.1,31.7,23.7,15.6",
+"Food Technology,48.0,44.5,41.0,37.0,32.5,43.3,35.6,27.3,17.6,9.3",
+"Geography,48.0,45.5,42.5,38.5,34.0,47.3,40.5,34.1,25.4,16.5",
+"Industrial Technology,48.0,44.0,39.5,35.5,31.5,39.6,32.7,25.4,16.6,9.1",
+"Investigating Science,47.0,44.5,41.5,38.0,34.0,42.8,35.5,28.9,20.0,11.5",
+"Legal Studies,48.0,45.5,43.0,39.0,33.0,45.7,39.9,34.4,25.9,16.5",
+"Mathematics Standard 1 Exam,47.0,42.0,39.0,35.5,32.5,34.7,27.7,20.2,12.5,6.6",
+"Mathematics Standard 2,47.5,44.5,40.5,36.5,32.0,42.9,37.3,31.5,23.2,15.1",
+"Mathematics Advanced,49.0,47.0,44.5,40.0,36.0,47.5,42.9,38.9,33.2,25.9",
+"Mathematics Extension 1,49.5,48.0,46.0,42.0,35.0,49.5,47.2,44.9,41.5,36.6",
+"Mathematics Extension 2,49.5,48.0,46.5,43.5,37.5,49.6,48.3,46.9,44.7,41.5",
+"Modern History,47.5,45.0,41.5,38.0,33.5,46.0,39.2,33.7,25.8,16.6",
+"History Extension,48.0,47.0,45.0,41.0,37.0,47.0,42.7,38.1,32.9,27.6",
+"Music 1,48.5,46.5,44.5,42.0,38.5,43.8,36.4,29.0,20.4,12.0",
+"Music 2,49.5,48.0,46.0,44.0,41.0,48.7,44.9,40.8,35.1,27.6",
+"Music Extension,50.0,50.0,49.0,47.0,45.0,50.0,49.6,45.2,36.3,29.4",
+"PDH&PE,47.0,44.5,41.5,37.5,33.5,43.5,37.3,31.3,22.8,14.2",
+"Physics,47.5,45.5,42.0,37.5,32.0,47.2,43.0,38.8,32.2,24.0",
+"Science Extension,47.0,44.0,41.0,38.0,35.0,46.4,41.0,37.1,32.5,27.2",
+"Society & Culture,48.0,45.5,42.5,39.5,36.0,44.9,37.7,31.3,23.1,14.7",
+"Software Engineering,48.0,44.5,41.5,38.0,34.5,47.3,40.5,34.6,27.2,19.0",
+"Studies of Religion I,48.0,46.0,43.0,39.0,35.0,45.2,39.9,34.8,28.1,20.8",
+"Studies of Religion II,48.0,45.0,43.0,39.5,36.0,46.0,40.5,35.4,28.1,19.7",
+"Textiles & Design,48.0,46.0,43.5,39.5,35.0,45.6,38.3,31.5,22.4,13.8",
+"Visual Arts,48.0,45.5,44.0,41.5,38.5,45.3,37.4,30.1,21.1,12.6",
+"Arabic Continuers,48.0,46.0,44.0,41.0,38.5,42.6,34.4,25.0,15.5,8.8",
+"Arabic Extension,49.0,47.0,46.0,43.0,41.0,41.6,33.7,32.1,25.3,21.3",
+"Chinese Beginners,49.5,48.5,47.5,42.0,32.0,48.1,39.0,34.7,23.3,14.2",
+"Chinese Continuers,49.5,48.5,47.5,45.5,40.5,48.6,43.5,40.2,35.0,26.0",
+"Chinese Extension,49.0,48.0,47.0,46.0,43.0,48.3,44.4,41.2,37.5,33.6",
+"Chinese & Literature,47.5,46.0,44.5,42.5,40.5,45.5,38.6,31.7,24.0,15.5",
+"Chinese in Context,49.5,48.0,47.0,45.5,44.5,49.3,42.7,38.5,31.9,25.9",
+"French Beginners,48.0,46.5,44.0,39.0,34.5,47.0,40.1,33.2,24.0,16.8",
+"French Continuers,49.0,47.0,45.0,41.5,38.0,48.0,44.2,40.5,35.4,29.7",
+"French Extension,48.0,46.0,44.0,40.0,37.0,50.0,47.0,43.3,38.5,34.5",
+"German Beginners,49.5,48.0,45.5,41.0,37.5,49.2,42.5,35.9,29.0,21.9",
+"German Continuers,49.0,47.5,45.5,41.0,38.0,48.9,45.1,41.1,34.2,28.5",
+"German Extension,50.0,49.0,48.0,45.0,43.0,50.0,46.7,44.7,37.9,34.9",
+"Indonesian Continuers,49.0,48.5,47.0,45.0,42.0,50.0,46.3,36.9,29.9,23.8",
+"Italian Beginners,49.5,47.5,45.0,39.5,33.5,48.1,41.9,36.4,28.9,19.9",
+"Italian Continuers,49.0,47.0,44.5,43.0,39.0,49.6,45.0,38.8,33.9,24.9",
+"Italian Extension,49.0,48.0,46.0,45.0,41.0,50.0,47.1,41.4,39.3,36.0",
+"Japanese Beginners,47.5,45.5,42.5,37.0,31.0,44.2,40.1,33.5,24.8,14.9",
+"Japanese Continuers,49.0,47.0,44.5,40.5,36.0,47.6,42.4,38.1,32.1,25.1",
+"Japanese Extension,49.0,48.0,47.0,45.0,42.0,48.3,45.0,41.2,38.0,34.7",
+"Korean Beginners,49.5,48.0,46.0,41.5,38.0,49.0,42.8,36.1,26.1,19.8",
+"Korean Continuers,49.0,47.5,46.5,45.5,41.5,48.6,39.4,34.1,28.0,20.5",
+"Latin Continuers,49.5,48.5,47.5,45.5,42.0,49.0,47.7,46.1,42.6,37.3",
+"Latin Extension,50.0,49.0,49.0,47.0,45.0,50.0,48.4,47.0,43.7,39.4",
+"Modern Greek Beginners,50.0,49.0,48.0,44.5,40.0,45.2,39.0,34.8,25.5,18.7",
+"Modern Greek Continuers,49.5,49.0,47.5,43.5,38.5,50.0,45.6,35.3,21.4,13.9",
+"Spanish Beginners,49.0,48.0,45.5,41.5,36.0,47.9,42.3,35.5,26.0,16.6",
+"Spanish Continuers,49.0,47.0,44.5,41.5,36.5,46.8,39.0,33.3,28.0,19.8",
+"Spanish Extension,49.0,48.0,47.0,45.0,42.0,47.2,40.3,36.5,31.6,28.0",
+"Vietnamese Continuers,46.5,43.5,42.5,40.0,37.5,40.3,30.7,25.1,16.3,10.2",
+"Automotive Exam,47.0,43.5,41.0,37.0,33.5,37.7,28.8,21.2,11.5,5.7",
+"Business Services Exam,46.5,43.0,40.5,37.0,33.5,39.1,32.9,26.1,17.8,10.8",
+"Construction Exam,47.0,44.0,42.0,39.0,35.0,39.5,31.4,24.7,15.0,8.3",
+"Electrotechnology Exam,45.0,42.5,39.5,36.5,32.5,36.7,31.1,24.0,17.2,9.5",
+"Entertainment Industry Exam,47.5,45.0,43.0,39.0,36.0,43.5,34.4,28.6,19.9,13.2",
+"Financial Services Exam,45.5,43.0,40.5,36.5,34.0,46.6,39.2,32.0,22.9,17.5",
+"Hospitality Exam,46.5,43.5,41.0,38.0,34.5,41.2,33.6,25.9,17.5,10.1",
+"Human Services Exam,46.5,42.5,39.0,36.0,33.5,39.1,32.1,25.1,18.1,11.5",
+"Information & Digital Technology Exam,47.0,43.5,41.5,38.5,35.5,40.6,32.3,27.0,19.9,13.9",
+"Primary Industries Exam,45.5,42.5,40.0,37.5,35.0,36.2,29.9,23.5,15.2,8.7",
+"Retail Services Exam,46.0,41.5,38.0,35.5,33.0,39.3,31.9,22.9,14.7,7.4",
+"Tourism Travel & Events Exam,45.5,42.5,40.5,38.0,36.0,43.1,34.4,26.4,19.4,13.9"
+];
+
+var A2_ROWS = [
+"Aboriginal Studies,11,24,23,18,13","Agriculture,11,23,28,22,11","Ancient History,9,27,30,17,12","Biology,7,28,30,21,10","Business Studies,12,26,29,22,9","Chemistry,11,27,33,19,9","Community & Family Studies,5,28,38,21,7","Dance,22,48,22,7,1","Design & Technology,11,38,36,13,2","Drama,23,35,31,9,2","Earth & Environmental Science,8,30,32,19,8","Economics,14,38,25,15,6","Engineering Studies,9,20,36,27,6","English Studies Exam,0.5,0.5,11,40,41","English Standard,0.5,12,55,26,5","English Advanced,13,52,31,3,0.5","English EALD,5,19,33,29,10","English Extension 1,42,53,4","English Extension 2,35,54,11","Enterprise Computing,5,25,41,20,6","Food Technology,9,24,31,25,10","Geography,12,30,30,17,8","Industrial Technology,8,15,31,31,13","Investigating Science,8,31,33,22,5","Legal Studies,15,29,24,19,10","Mathematics Standard 1 Exam,3,16,39,32,7","Mathematics Standard 2,9,21,30,23,12","Mathematics Advanced,23,28,29,14,4","Mathematics Extension 1,35,43,18","Mathematics Extension 2,41,43,14","Modern History,10,26,34,18,9","History Extension,26,62,12","Music 1,22,45,20,8,4","Music 2,40,46,14,0.5","Music Extension,76,22,2","PDH&PE,9,27,33,22,8","Physics,13,25,26,21,14","Science Extension,7,69,22","Society & Culture,12,35,35,13,4","Software Engineering,8,28,37,19,6","Studies of Religion I,16,31,34,15,4","Studies of Religion II,13,36,31,14,5","Textiles & Design,16,32,29,16,5","Visual Arts,16,48,28,7,1",
+"Arabic Continuers,20,44,25,7,3","Arabic Extension,42,55,4","Chinese Beginners,46,9,5,18,16","Chinese Continuers,55,24,13,7,1","Chinese Extension,64,36","Chinese & Literature,20,59,17,3,0.5","Chinese in Context,67,27,5,1","French Beginners,19,26,28,17,7","French Continuers,28,35,28,8,1","French Extension,24,63,13","German Beginners,31,25,33,9,1","German Continuers,32,28,29,10,1","German Extension,65,33,2","Indonesian Continuers,56,34,4,4,2","Italian Beginners,25,24,19,19,9","Italian Continuers,23,49,19,6,2","Italian Extension,54,46","Japanese Beginners,13,22,24,18,13","Japanese Continuers,23,33,24,14,5","Japanese Extension,51,44,4","Korean Beginners,32,33,24,8,4","Korean Continuers,56,29,8,4,4","Latin Continuers,57,24,16,2","Latin Extension,80,18,3","Modern Greek Beginners,48,27,15,5,5","Modern Greek Continuers,47,22,18,11","Spanish Beginners,30,28,19,18,3","Spanish Continuers,23,39,19,16,2","Spanish Extension,53,46,2","Vietnamese Continuers,5,46,42,6,0.5",
+"Automotive Exam,5,28,36,26,5","Business Services Exam,4,24,38,25,7","Construction Exam,7,37,31,15,9","Electrotechnology Exam,2,20,40,31,6","Entertainment Industry Exam,12,33,38,14,2","Financial Services Exam,3,25,37,32,4","Hospitality Exam,5,29,41,20,4","Human Services Exam,4,17,43,33,3","Information & Digital Technology Exam,6,31,40,19,2","Primary Industries Exam,2,24,51,19,3","Retail Services Exam,2,12,44,33,7","Tourism Travel & Events Exam,2,31,46,20,1"
+];
+
+var ATAR_TABLE = [[150,46.80],[165.7,50],[190,55],[200,57.20],[212.9,60],[237.2,65],[250,67.55],[262,70],[287.5,75],[300,77.40],[313.8,80],[341.6,85],[350,86.45],[370.7,90],[400,94.40],[404.6,95],[433.2,98],[447.8,99],[450,99.10],[459.4,99.5],[479.4,99.95]];
+
+var RAW = {
+"Mathematics Standard 2": {2025:[[94,96]],2023:[[93,93],[92,92],[90,90],[89,89],[87,88],[86,88],[85,87],[84,86],[82,85],[80,84],[74,80],[72,79],[73,79],[70,78],[68,77],[67,76],[65,75],[63,74],[61,73],[55,70],[54,70],[52,69],[50,68],[47,66],[40,63],[35,60],[32,59]],2022:[[87,90],[70,80],[52,70],[32,60]]},
+"Mathematics Advanced": {2025:[[96,98],[95,98],[91,96],[89,96],[88,95],[86,94],[84,94],[81,92],[72,88],[64,83]],2024:[[94,98],[91,96],[88,95],[85,94],[84,94],[83,93],[82,93],[81,92],[80,92],[79,92],[76,90],[67,85],[34,65]],2023:[[97,99],[96,98],[95,98],[93,97],[91,96],[81,91],[79,90],[75,88],[73,87],[74,87],[65,83],[62,81],[61,81],[60,80],[59,79],[58,79],[57,78],[55,77],[54,77],[53,76],[52,76],[48,74],[49,74],[46,73],[44,72],[43,71],[40,69],[39,69],[37,68],[35,67],[36,67],[32,65],[31,65],[29,64],[30,64],[28,63],[23,61],[24,61],[22,60],[21,59],[20,58],[19,58],[17,56],[14,53],[12,52],[9,45]],2022:[[82,92],[79,90],[63,81],[40,70],[22,61]]},
+"Mathematics Extension 1": {2025:[[88.57,96],[84.28,94],[80,92],[64.29,82],[60,78]],2024:[[84.23,94],[82.86,93],[81.43,93],[87.14,96],[81.43,93],[68.57,84],[67.14,84],[67.14,83]],2023:[[80,94],[78.57,94],[74.29,93],[65.71,90],[64.29,90],[57.14,82],[55.71,80],[48.57,74],[45.71,70],[44.29,69],[42.86,68],[40,66],[32.86,60],[24.29,54],[22.86,52],[22.86,52],[18.57,46],[15.71,40],[12.86,32]],2022:[[85.7,96],[84.3,96],[82.9,95],[75.7,93],[64.3,90],[52.9,78],[45.7,70]]},
+"Mathematics Extension 2": {2025:[[87,96],[81,94],[70,91],[50,75]],2024:[[85,95],[78,93],[71,90],[66,86],[64,84]],2023:[[66,90],[54,80],[43,71],[32,61]],2022:[[84,96],[76,94],[67,91],[65,91],[51,80],[50,79],[41,72]]},
+"English Standard": {2025:[[87.5,86]],2024:[[96,95],[93,91],[89,88]],2023:[[75.5,80]],2022:[[96,96],[83.5,85],[75.5,80],[60,70]]},
+"English Advanced": {2025:[[98,99],[93.5,96],[93,95],[90.5,93],[90,93],[88,91],[84,88],[81,87],[79,86],[78,85],[70,80],[64,78]],2024:[[96.5,98],[95,96],[93,96],[93,95],[92.5,95],[89,92],[88,91],[87,90],[86.5,92],[86.5,91],[85,89],[84.5,89],[81,87],[80.5,87],[79,86],[77.5,85]],2023:[[93.5,96],[93,95],[92,95],[89,93],[86.5,91],[82.5,89],[81.5,88],[80,87],[67,80]],2022:[[71,82],[93,96],[89.5,94],[89,93],[88.5,93],[86,91],[83.5,90],[83,89],[80,88],[68,81],[65,79],[49,70]]},
+"English Extension 1": {2025:[[90,94]],2024:[[88,94],[82,92]]},
+"Chemistry": {2025:[[96,97],[95,96],[94,96],[90,92],[86,89],[84,88]],2024:[[99,99],[98,98],[91,93],[90,92],[89,91],[87,90],[82,86],[80,86],[55,70]],2023:[[97,98],[96,97],[89,92],[88,91],[87,91],[72,80],[70,79],[65,76]],2022:[[92,95],[86,91],[84,89],[70,80],[62,76],[50,70]]},
+"Physics": {2025:[[94,97],[93,97],[88,94],[84,92],[78,89],[77,89],[73,86]],2024:[[91,96],[90,95],[87,94],[80,90],[79,89],[77,87],[76,86],[71,84]],2023:[[95,97],[94,97],[89,94],[86,92],[82,90]],2022:[[97,97],[92,93],[90,91],[89,90],[86,88],[74,80],[54,70]]},
+"Biology": {2025:[[94,95],[86,89],[83,87]],2024:[[93,94],[90,92],[76,82]],2023:[[89,92],[86,90]],2022:[[88,95],[86,94],[85,93],[78,90],[69,83],[65,80],[57,74],[53,71],[38,60]]},
+"Economics": {2025:[[99.5,100],[98.5,99],[97.5,98],[91.5,93],[90.5,92],[87.5,89]],2024:[[100,100],[97,98],[95.5,96],[91,93],[91,92],[88,91],[87,90]],2023:[[98,99],[88,92],[87.5,91],[84,89],[76.5,85]],2022:[[90,94],[89,94],[86.5,92],[82.5,89],[77.5,87],[67,81],[48,70]]},
+"Business Studies": {2025:[[96,98],[92,96],[89.5,94],[88.5,93],[86,91],[80.5,88],[82.5,89]],2024:[[94,95],[91,94],[90.5,93],[86,90],[81,86]],2023:[[96,97],[95.5,97],[88,92],[84.5,90]],2022:[[90.5,94],[89,94],[87.5,93],[87,92],[83.5,90],[68,80]]},
+"Legal Studies": {2025:[[91,95],[89.5,93],[87.5,92],[83,91]],2024:[[97,98],[96,96],[86,92],[76.5,87]],2023:[[97,98],[79,86],[71,80]],2022:[[90,93],[81,89],[78,87],[69.5,81]]},
+"Modern History": {2025:[[89.5,95],[89,95],[85.5,93]],2024:[[85,92],[81.5,91],[74.5,87],[74,86]],2023:[[90.5,96],[86,93],[85.5,93],[81.5,91],[71.5,84]],2022:[[78.5,89],[68.5,81]]},
+"PDH&PE": {2025:[[91,94],[88.5,94]],2024:[[66,81]],2023:[[78,90],[77,90],[65,80]],2022:[[74.5,87],[63,79]]}
+};
+
+var COURSES = A3_ROWS.map(function (line) {
+  var p = line.split(",");
+  var name = p[0];
+  var nums = p.slice(1).map(Number);
+  var extension = /Extension/.test(name);
+  var oneUnit = (extension && name !== "Mathematics Extension 2") || name === "Studies of Religion I";
+  var bands = [];
+  A2_ROWS.forEach(function (row) {
+    var q = row.split(",");
+    if (q[0] === name) bands = q.slice(1).map(Number);
+  });
+  return { name: name, units: oneUnit ? 1 : 2, extension: extension, catB: / Exam$/.test(name), english: /^English /.test(name), h: nums.slice(0, 5).reverse(), s: nums.slice(5, 10).reverse(), bands: bands };
+}).sort(function (a, b) { return a.name.localeCompare(b.name); });
+
+function percentileFor(course, mark100) {
+  var pts = [[0, 0], [100, 100]];
+  var pcts = [25, 50, 75, 90, 99];
+  for (var i = 0; i < 5; i++) pts.push([course.h[i] * 2, pcts[i]]);
+  var cuts = course.extension ? [90, 70, 50] : [90, 80, 70, 60, 50];
+  var above = 0;
+  for (var j = 0; j < course.bands.length && j < cuts.length; j++) {
+    above += course.bands[j];
+    pts.push([cuts[j], Math.max(0, 100 - above)]);
+  }
+  return interp(cleanPoints(pts), Math.max(0, Math.min(100, mark100)));
+}
+
+function ordinal(n) {
+  var text = String(Math.round(n));
+  var last = text.slice(-1), lastTwo = text.slice(-2);
+  if (lastTwo === "11" || lastTwo === "12" || lastTwo === "13") return text + "th";
+  return text + (last === "1" ? "st" : last === "2" ? "nd" : last === "3" ? "rd" : "th");
+}
+
+function markForPercentile(course, target) {
+  var lo = 0, hi = 100;
+  for (var i = 0; i < 40; i++) {
+    var mid = (lo + hi) / 2;
+    if (percentileFor(course, mid) < target) lo = mid; else hi = mid;
+  }
+  return hi;
+}
+
+function findCourse(name) { for (var i = 0; i < COURSES.length; i++) if (COURSES[i].name === name) return COURSES[i]; return null; }
+
+function interp(pts, x) {
+  if (x <= pts[0][0]) return pts[0][1];
+  for (var i = 1; i < pts.length; i++) {
+    if (x <= pts[i][0]) {
+      var a = pts[i - 1], b = pts[i];
+      if (b[0] === a[0]) return b[1];
+      return a[1] + (b[1] - a[1]) * (x - a[0]) / (b[0] - a[0]);
+    }
+  }
+  return pts[pts.length - 1][1];
+}
+
+function cleanPoints(pts) {
+  pts.sort(function (a, b) { return a[0] - b[0] || a[1] - b[1]; });
+  var out = [];
+  pts.forEach(function (p) {
+    var last = out[out.length - 1];
+    if (last && last[0] === p[0]) last[1] = Math.max(last[1], p[1]);
+    else out.push([p[0], p[1]]);
+  });
+  for (var i = 1; i < out.length; i++) if (out[i][1] < out[i - 1][1]) out[i][1] = out[i - 1][1];
+  return out;
+}
+
+function scaledPerUnit(course, mark100) {
+  var pts = [[0, 0]];
+  for (var i = 0; i < 5; i++) pts.push([course.h[i], course.s[i]]);
+  pts.push([50, 50]);
+  return interp(cleanPoints(pts), Math.max(0, Math.min(100, mark100)) / 2);
+}
+
+function rawPoints(subject, year) {
+  var data = RAW[subject] || {};
+  var pts = [];
+  Object.keys(data).forEach(function (y) { if (year === "all" || String(y) === String(year)) pts = pts.concat(data[y]); });
+  return pts;
+}
+
+function rawCurve(pts) {
+  pts = pts.slice().sort(function (a, b) { return a[0] - b[0]; });
+  var groups = [];
+  pts.forEach(function (p) {
+    var g = groups[groups.length - 1];
+    if (g && g.x === p[0]) { g.sum += p[1]; g.n += 1; } else groups.push({ x: p[0], sum: p[1], n: 1 });
+  });
+  var st = [];
+  groups.forEach(function (g) {
+    st.push({ w: g.n, y: g.sum / g.n, xs: [g.x] });
+    while (st.length > 1 && st[st.length - 2].y > st[st.length - 1].y) {
+      var t = st.pop(), u = st.pop(), w = u.w + t.w;
+      st.push({ w: w, y: (u.y * u.w + t.y * t.w) / w, xs: u.xs.concat(t.xs) });
+    }
+  });
+  var curve = [[0, 0]];
+  st.forEach(function (b) { b.xs.forEach(function (x) { curve.push([x, b.y]); }); });
+  curve.push([100, 100]);
+  return cleanPoints(curve);
+}
+
+function aggregateToAtar(agg) {
+  var t = ATAR_TABLE, atar;
+  if (agg >= t[t.length - 1][0]) atar = 99.95;
+  else if (agg < t[0][0]) atar = t[0][1] - ((t[1][1] - t[0][1]) / (t[1][0] - t[0][0])) * (t[0][0] - agg);
+  else atar = interp(t, agg);
+  return Math.min(99.95, Math.floor(atar * 20 + 1e-9) / 20);
+}
+
+function hasExt2(rows) {
+  return rows.some(function (r) { return r.course === "Mathematics Extension 2"; });
+}
+
+function unitsFor(c, ext2) {
+  return c.name === "Mathematics Extension 1" && ext2 ? 2 : c.units;
+}
+
+function maxFor(c, ext2) {
+  return unitsFor(c, ext2) === 1 ? 50 : 100;
+}
+
+function computeAtar(rows, errors) {
+  var items = [], per = {}, ext2 = hasExt2(rows);
+  rows.forEach(function (r, idx) {
+    var c = findCourse(r.course), m = parseFloat(r.mark);
+    if (!c || isNaN(m) || (errors && errors[idx].any)) return;
+    m = Math.max(0, Math.min(100, m * 100 / maxFor(c, ext2)));
+    var s = scaledPerUnit(c, m), units = unitsFor(c, ext2);
+    per[idx] = { scaled: s, used: 0, units: units };
+    for (var u = 0; u < units; u++) items.push({ idx: idx, v: s, english: c.english, catB: c.catB });
+  });
+  items.sort(function (a, b) { return b.v - a.v; });
+  var chosen = [], catB = 0;
+  var eng = items.filter(function (i) { return i.english; }).slice(0, 2);
+  eng.forEach(function (i) { chosen.push(i); if (i.catB) catB++; });
+  items.forEach(function (i) {
+    if (chosen.length >= 10 || chosen.indexOf(i) >= 0) return;
+    if (i.catB && catB >= 2) return;
+    chosen.push(i); if (i.catB) catB++;
+  });
+  var agg = 0;
+  chosen.forEach(function (i) { agg += i.v; per[i.idx].used += 1; });
+  var ready = chosen.length >= 10 && eng.length >= 2;
+  return { per: per, aggregate: agg, unitsCounted: chosen.length, totalUnits: items.length, englishUnits: eng.length, atar: ready ? aggregateToAtar(agg) : null };
+}
+
+function bandFor(mark, course) {
+  if (course && course.extension) return mark >= 90 ? "E4" : mark >= 70 ? "E3" : mark >= 50 ? "E2" : "E1";
+  return mark >= 90 ? "Band 6" : mark >= 80 ? "Band 5" : mark >= 70 ? "Band 4" : mark >= 60 ? "Band 3" : mark >= 50 ? "Band 2" : "Band 1";
+}
+
+var ERROR_RED = "#B42318";
+
+function numberError(text, max, kind, wholeOnly) {
+  var t = String(text == null ? "" : text).trim();
+  if (t === "") return null;
+  if (!/^-?\d*\.?\d+$/.test(t)) return "Enter your " + kind + " as a number from 0 to " + max + ".";
+  var v = parseFloat(t);
+  if (v < 0 || v > max) return "Your " + kind + " must be between 0 and " + max + ".";
+  if (wholeOnly && v !== Math.floor(v)) return "HSC marks are whole numbers. Try " + Math.round(v) + ".";
+  return null;
+}
+
+var PREREQS = {
+  "English Extension 1": [["English Advanced"], "English Extension 1 needs English Advanced in your list."],
+  "English Extension 2": [["English Extension 1"], "English Extension 2 needs English Extension 1 in your list."],
+  "Mathematics Extension 1": [["Mathematics Advanced", "Mathematics Extension 2"], "Mathematics Extension 1 needs Mathematics Advanced or Extension 2 in your list."],
+  "Mathematics Extension 2": [["Mathematics Extension 1"], "Mathematics Extension 2 needs Mathematics Extension 1 in your list."],
+  "History Extension": [["Modern History", "Ancient History"], "History Extension needs Modern History or Ancient History in your list."],
+  "Music Extension": [["Music 2"], "Music Extension needs Music 2 in your list."],
+  "Science Extension": [["Biology", "Chemistry", "Physics", "Earth & Environmental Science", "Investigating Science"], "Science Extension needs a science course in your list."]
+};
+
+var ONE_OF = [
+  [["English Standard", "English Advanced", "English EALD", "English Studies Exam"], "You can only take one of English Standard, Advanced, EAL/D or Studies."],
+  [["Mathematics Standard 1 Exam", "Mathematics Standard 2", "Mathematics Advanced"], "You can only take one of Mathematics Standard 1, Standard 2 or Advanced."],
+  [["Studies of Religion I", "Studies of Religion II"], "You can take Studies of Religion I or II, not both."]
+];
+
+function courseError(rows, i) {
+  var name = rows[i].course;
+  if (!name) return null;
+  var names = rows.map(function (r) { return r.course; });
+  var has = function (n) { return names.indexOf(n) >= 0; };
+  if (names.indexOf(name) < i) return name + " is already in your list.";
+  for (var g = 0; g < ONE_OF.length; g++) {
+    var group = ONE_OF[g][0];
+    if (group.indexOf(name) >= 0) {
+      for (var j = 0; j < i; j++) if (group.indexOf(names[j]) >= 0) return ONE_OF[g][1];
+    }
+  }
+  if (name === "Mathematics Advanced" && has("Mathematics Extension 2")) return "Extension 2 students don't get a Mathematics Advanced mark. Remove this subject.";
+  if (/^Mathematics Standard/.test(name) && (has("Mathematics Extension 1") || has("Mathematics Extension 2"))) return "Mathematics Standard can't be taken with an Extension course.";
+  var pre = PREREQS[name];
+  if (pre && !pre[0].some(has)) return pre[1];
+  var lang = name.match(/^(Arabic|Chinese|French|German|Indonesian|Italian|Japanese|Korean|Latin|Spanish) (Extension|Beginners|Continuers)$/);
+  if (lang && lang[2] === "Extension" && !has(lang[1] + " Continuers")) return name + " needs " + lang[1] + " Continuers in your list.";
+  if (lang && lang[2] === "Continuers" && has(lang[1] + " Beginners")) return "You can't take both " + lang[1] + " Beginners and Continuers.";
+  return null;
+}
+
+function rowErrors(rows) {
+  var ext2 = hasExt2(rows);
+  return rows.map(function (r, i) {
+    var c = findCourse(r.course);
+    var hasMark = String(r.mark == null ? "" : r.mark).trim() !== "";
+    var cErr = courseError(rows, i);
+    var mErr = null;
+    if (hasMark && !c) mErr = "Choose a subject for this mark.";
+    else if (c && typeof r.pct !== "number") mErr = numberError(r.mark, maxFor(c, ext2), "mark", true);
+    return { course: cErr, mark: mErr, any: !!(cErr || mErr) };
+  });
+}
+
+var nextId = 1;
+function newRow(course, mark) { nextId += 1; return { id: nextId, course: course || "", mark: mark === undefined ? "" : String(mark) }; }
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = {
+      convSubject: "Mathematics Advanced",
+      convYear: "all",
+      convRaw: "",
+      convAssess: "",
+      rows: [newRow("English Advanced"), newRow("Mathematics Advanced"), newRow("Mathematics Extension 1"), newRow("Chemistry"), newRow("Physics"), newRow("Economics")]
+    };
+  }
+
+  updateRow(id, patch) {
+    this.setState({ rows: this.state.rows.map(function (r) { return r.id === id ? Object.assign({}, r, patch) : r; }) });
+  }
+
+  renderVals() {
+    var self = this, st = this.state;
+
+    var years = Object.keys(RAW[st.convSubject] || {}).filter(function (y) { return RAW[st.convSubject][y].length >= 5; }).sort().reverse();
+    var yearOptions = [{ value: "all", label: "All years (2022–2025)" }].concat(years.map(function (y) { return { value: y, label: y + " only" }; }));
+    var convYear = st.convYear === "all" || years.indexOf(st.convYear) >= 0 ? st.convYear : "all";
+    var pts = rawPoints(st.convSubject, convYear);
+    var convRawError = numberError(st.convRaw, 100, "raw mark", false);
+    var convAssessError = null;
+    var convHasInput = String(st.convRaw).trim() !== "";
+    var raw = parseFloat(st.convRaw), assess = NaN;
+    var convReady = convHasInput && !convRawError && !convAssessError;
+    var aligned = 0, hsc = 0, sparse = false;
+    if (convReady) {
+      raw = Math.max(0, Math.min(100, raw));
+      aligned = Math.round(interp(rawCurve(pts), raw));
+      hsc = isNaN(assess) ? aligned : Math.round((aligned + Math.max(0, Math.min(100, assess))) / 2);
+      var minRaw = Math.min.apply(null, pts.map(function (p) { return p[0]; }));
+      sparse = pts.length < 6 || raw < minRaw - 5;
+    }
+    var convCourse = findCourse(st.convSubject);
+
+    var errors = rowErrors(st.rows);
+    var anyRowError = errors.some(function (e) { return e.any; });
+    var res = computeAtar(st.rows, errors);
+    var ext2 = hasExt2(st.rows);
+    var hasAdv = st.rows.some(function (r) { return r.course === "Mathematics Advanced"; });
+    var rows = st.rows.map(function (r, idx) {
+      var c = findCourse(r.course), p = res.per[idx], info;
+      var units = c ? unitsFor(c, ext2) : 2;
+      var unitLabel = units === 1 ? "1 unit · out of 50" : "2 units";
+      if (!c) info = "";
+      else if (!p) info = unitLabel;
+      else info = unitLabel + (p.used === 0 ? " · not counted" : p.used < p.units ? " · " + p.used + " counted" : "");
+      // Kept for reference, not displayed: what this subject adds to the aggregate out of 500.
+      var aggregateContribution = p ? (p.scaled * p.used).toFixed(1) : null;
+      var err = errors[idx];
+      return {
+        id: r.id, course: r.course, info: info, aggregateContribution: aggregateContribution,
+        error: err.course || err.mark || "",
+        hasError: err.any,
+        noError: !err.any,
+        courseInvalid: err.course ? "true" : "false",
+        courseBorder: err.course ? ERROR_RED : "#B7C3D8",
+        markInvalid: err.mark ? "true" : "false",
+        markBorder: err.mark ? ERROR_RED : "#B7C3D8",
+        mark: typeof r.pct === "number" && r.mark !== "" ? String(Math.round(parseFloat(r.mark))) : r.mark,
+        max: String(units === 1 ? 50 : 100),
+        setCourse: function (e) { self.updateRow(r.id, { course: e.target.value, pct: null }); },
+        setMark: function (e) { self.updateRow(r.id, { mark: e.target.value, pct: null }); },
+        remove: function () { self.setState({ rows: self.state.rows.filter(function (x) { return x.id !== r.id; }) }); }
+      };
+    });
+
+    var breakdown = [];
+    st.rows.forEach(function (r, idx) {
+      var c = findCourse(r.course), entered = parseFloat(r.mark), p = res.per[idx];
+      if (!c || isNaN(entered) || !p || errors[idx].any) return;
+      var max = maxFor(c, ext2), factor = 100 / max;
+      var m = Math.max(0, Math.min(100, entered * factor));
+      var contrib = aggregateToAtar(scaledPerUnit(c, m) * 10);
+      var counted = p.used === 0 ? "not counted" : p.used === p.units ? "counts " + p.used + (p.used === 1 ? " unit" : " units") : "counts " + p.used + " of " + p.units + " units";
+      var status = "neutral";
+      if (p.used === 0) status = "off";
+      else if (res.atar !== null) {
+        var diff = contrib - res.atar;
+        status = diff >= 0 ? "up" : diff > -1.5 ? "steady" : "down";
+      }
+      var look = {
+        up: { ring: "#1F9D55", text: "#15703C", bg: "#E3F5EA", label: "Boosting your ATAR" },
+        steady: { ring: "#E0A400", text: "#7A5800", bg: "#FFF4D6", label: "Close to your ATAR" },
+        down: { ring: "#D63B2F", text: "#A3241A", bg: "#FDE7E4", label: "Dragging your ATAR down" },
+        off: { ring: "#9AA6BC", text: "#4A5573", bg: "#EEF1F6", label: "Not counted in your best 10 units" },
+        neutral: { ring: "#2448C9", text: "#2448C9", bg: "#E8EDFC", label: "Add 10 units to compare" }
+      }[status];
+      var markNow = Math.round(entered);
+      var pctNow = typeof r.pct === "number" ? r.pct : Math.round(percentileFor(c, m));
+      var setTo = function (val) { self.updateRow(r.id, { mark: String(Math.max(0, Math.min(max, val))), pct: null }); };
+      var setPct = function (target) {
+        target = Math.max(0, Math.min(100, target));
+        self.updateRow(r.id, { mark: String(Math.round(markForPercentile(c, target) / factor * 100) / 100), pct: target });
+      };
+      breakdown.push({
+        key: r.id,
+        name: c.name,
+        mark: String(markNow),
+        contribution: contrib < 30 ? "<30" : contrib.toFixed(2),
+        band: bandFor(m, c),
+        pct: ordinal(pctNow),
+        pctDec: function () { setPct(pctNow - 1); },
+        pctInc: function () { setPct(pctNow + 1); },
+        dash: (Math.max(0, Math.min(100, contrib)) / 100 * 100.53).toFixed(1) + " 200",
+        ringColor: look.ring,
+        statusText: look.label,
+        statusColor: look.text,
+        statusBg: look.bg,
+        dec: function () { setTo(markNow - 1); },
+        inc: function () { setTo(markNow + 1); }
+      });
+    });
+
+    var atarText = "—", atarNote = "", aggText = "—";
+    if (anyRowError) {
+      atarNote = "Fix the highlighted subjects to see your ATAR.";
+    } else if (res.atar !== null) {
+      atarText = res.atar < 30 ? "Below 30" : res.atar.toFixed(2);
+      atarNote = "";
+      aggText = res.aggregate.toFixed(1) + " / 500";
+    } else if (res.englishUnits < 2) {
+      atarNote = "Add an English course with a mark. Your ATAR needs at least 2 units of English.";
+    } else {
+      atarNote = "Add marks for at least 10 units. You have " + res.totalUnits + " so far.";
+    }
+
+    return {
+      accent: this.props.accent ?? '#C41E24',
+      rawSubjects: Object.keys(RAW).map(function (n) { return { name: n }; }),
+      yearOptions: yearOptions,
+      convSubject: st.convSubject,
+      convYear: convYear,
+      convRaw: st.convRaw,
+      convAssess: st.convAssess,
+      convReady: convReady,
+      convEmpty: !convHasInput && !convAssessError,
+      convBlocked: !!(convRawError || convAssessError),
+      convRawError: convRawError || "",
+      convRawHasError: !!convRawError,
+      convRawInvalid: convRawError ? "true" : "false",
+      convRawBorder: convRawError ? ERROR_RED : "#B7C3D8",
+      convAssessError: convAssessError || "",
+      convAssessHasError: !!convAssessError,
+      convAssessInvalid: convAssessError ? "true" : "false",
+      convAssessBorder: convAssessError ? ERROR_RED : "#B7C3D8",
+      convAligned: String(aligned),
+      convHsc: String(hsc),
+      convBand: convCourse ? bandFor(hsc, convCourse) + " · " + ordinal(percentileFor(convCourse, hsc)) + " percentile" : "",
+      convBasis: (isNaN(assess) ? "Assumes assessment matches exam" : "Exam and assessment averaged") + " · " + pts.length + " student marks",
+      convSparse: convReady && sparse,
+      setConvSubject: function (e) { self.setState({ convSubject: e.target.value, convYear: "all" }); },
+      setConvYear: function (e) { self.setState({ convYear: e.target.value }); },
+      setConvRaw: function (e) { self.setState({ convRaw: e.target.value }); },
+      setConvAssess: function (e) { self.setState({ convAssess: e.target.value }); },
+      addConvToAtar: function () {
+        if (!convReady) return;
+        var list = self.state.rows, found = false;
+        var target = findCourse(st.convSubject);
+        var value = target && maxFor(target, ext2) === 50 ? Math.round(hsc / 2) : hsc;
+        var next = list.map(function (r) { if (!found && r.course === st.convSubject) { found = true; return Object.assign({}, r, { mark: String(value), pct: null }); } return r; });
+        if (!found) next = next.concat([newRow(st.convSubject, value)]);
+        self.setState({ rows: next });
+      },
+      courseOptions: COURSES.map(function (c) { return { name: c.name, label: c.name }; }),
+      rows: rows,
+      addRow: function () { self.setState({ rows: self.state.rows.concat([newRow()]) }); },
+      atarText: atarText,
+      atarNote: atarNote,
+      aggText: aggText,
+      breakdown: breakdown,
+      hasBreakdown: breakdown.length > 0,
+      unitsText: res.unitsCounted + " / 10 units"
+    };
+  }
+}
+
+htmPreact.render(html`<${Component} />`, document.getElementById('app'));
+})();
+</script>
+</body>
+</html>

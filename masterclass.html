@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Masterclass Term Program – Vertex Academics</title>
+<meta name="description" content="Masterclass Term Program for Year 12 Advanced, Extension 1 and Extension 2. Small group sessions twice a week, $60 a week.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#DCE9F5;overflow-x:clip}
+a{color:#0D2347}a:hover{color:#C41E24}
+@keyframes rvUp{from{opacity:0;transform:translateY(64px)}to{opacity:1;transform:none}}
+@keyframes rvL{from{opacity:0;transform:translateX(-90px)}to{opacity:1;transform:none}}
+@keyframes rvR{from{opacity:0;transform:translateX(90px)}to{opacity:1;transform:none}}
+@keyframes rvS{from{opacity:0;transform:scale(.86)}to{opacity:1;transform:none}}
+@keyframes heroOut{to{opacity:.1;transform:translateY(-90px)}}
+@keyframes fillText{to{background-position:0 0}}
+@keyframes prog{to{transform:scaleX(1)}}
+@keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+.progress{display:none}
+@media (prefers-reduced-motion: no-preference){@supports (animation-timeline: view()){
+.rv{animation:rvUp linear both;animation-timeline:view();animation-range:entry 0% cover 28%}
+.rv-l{animation:rvL linear both;animation-timeline:view();animation-range:entry 0% cover 30%}
+.rv-r{animation:rvR linear both;animation-timeline:view();animation-range:entry 0% cover 30%}
+.rv-s{animation:rvS linear both;animation-timeline:view();animation-range:entry 0% cover 30%}
+.d1{animation-range:entry 8% cover 34%}
+.d2{animation-range:entry 16% cover 40%}
+.d3{animation-range:entry 24% cover 46%}
+.hero-out{animation:heroOut linear both;animation-timeline:view();animation-range:exit 0% exit 100%}
+.fill-text{background:linear-gradient(90deg,#0D2347 50%,#AEBBD0 50%) 100% 0/200% 100% no-repeat;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:fillText linear both;animation-timeline:view();animation-range:cover 12% cover 50%}
+.fill-dark{background:linear-gradient(90deg,#FFFFFF 50%,#3B4D78 50%) 100% 0/200% 100% no-repeat;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:fillText linear both;animation-timeline:view();animation-range:cover 15% cover 55%}
+.line-grow{transform-origin:50% 0;animation:grow linear both;animation-timeline:view();animation-range:cover 10% cover 70%}
+.progress{display:block;position:fixed;top:0;left:0;right:0;height:4px;transform-origin:0 50%;z-index:30;animation:prog linear both;animation-timeline:scroll(root)}
+}}
+</style>
+</head>
+<body>
+<div style="font-family: 'DM Sans', system-ui, sans-serif; color: #0D2347; background: #DCE9F5; line-height: 1.6; font-size: 1.0625rem; overflow-x: clip">
+<div class="progress" aria-hidden="true" style="background: #C41E24"></div>
+
+<header style="background: #0D2347; position: sticky; top: 0; z-index: 10">
+<nav style="max-width: 1180px; margin: 0 auto; padding: 16px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px">
+<a href="index.html" style="color: #FFFFFF; text-decoration: none; font-weight: 800; font-size: 1.25rem; letter-spacing: -0.01em; display: flex; align-items: center; gap: 10px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FF6B6F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20L12 4l9 16"/><path d="M7.5 20h9"/></svg>Vertex Academics</a>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 22px; font-weight: 500; font-size: 0.97rem">
+<a href="index.html" style="color: #FFFFFF; text-decoration: none; padding: 10px 0; border-bottom: 2px solid transparent">Home</a>
+<a href="method.html" style="color: #FFFFFF; text-decoration: none; padding: 10px 0; border-bottom: 2px solid transparent">My Method</a>
+<a href="tutoring.html" style="color: #FFFFFF; text-decoration: none; padding: 10px 0; border-bottom: 2px solid transparent">Tutoring</a>
+<a href="masterclass.html" aria-current="page" style="color: #FFFFFF; text-decoration: none; padding: 10px 0; border-bottom: 2px solid #FF6B6F">Masterclass</a>
+<a href="calculators.html" style="color: #FFFFFF; text-decoration: none; padding: 10px 0; border-bottom: 2px solid transparent">Calculators</a>
+<a href="contact.html" style="background: #C41E24; color: #FFFFFF; text-decoration: none; padding: 11px 20px; border-radius: 999px; font-weight: 700">Contact</a>
+</div>
+</nav>
+</header>
+
+<section class="hero-out" style="max-width: 1180px; margin: 0 auto; padding: 96px 24px 72px; display: flex; flex-wrap: wrap; gap: 40px 56px; align-items: flex-end">
+<div style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<span style="align-self: flex-start; background: #C41E24; color: #FFFFFF; border-radius: 999px; padding: 6px 16px; font-weight: 700; font-size: 0.92rem">Year 12 · Limited spots</span>
+<h1 style="margin: 0; font-weight: 800; font-size: clamp(2.8rem, 6.4vw, 5.2rem); line-height: 0.98; letter-spacing: -0.03em">Masterclass<br><span style="color: #C41E24">Term Program</span></h1>
+<p style="margin: 0; color: #2C3B5A; font-size: 1.2rem; max-width: 36rem">My method, as a term program for Year 12 Advanced, Extension 1 and Extension 2. Small group sessions twice a week, plus a weekly workbook with the questions you need, marked by me.</p>
+<p style="margin: 0; font-weight: 700">Starting Week 5, depending on demand.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px">
+<a href="contact.html" style="background: #C41E24; color: #FFFFFF; text-decoration: none; padding: 15px 28px; border-radius: 999px; font-weight: 700">Reserve your spot</a>
+<a href="#included" style="background: #FFFFFF; color: #0D2347; text-decoration: none; padding: 15px 28px; border-radius: 999px; font-weight: 700">What's included</a>
+</div>
+</div>
+<div style="flex: 0 1 300px; min-width: 0; background: #0D2347; color: #FFFFFF; border-radius: 28px; padding: 32px; display: flex; flex-direction: column; gap: 6px">
+<span style="color: #D5DDEE">Weekly fee</span>
+<span style="font-weight: 800; font-size: 4rem; line-height: 1">$60</span>
+<span style="color: #D5DDEE">per week, everything included</span>
+</div>
+</section>
+
+<section style="max-width: 1180px; margin: 0 auto; padding: 0 24px 110px">
+<div style="background: #FFFFFF; border-radius: 28px; padding: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 28px">
+<div class="rv-s"><div style="font-weight: 800; font-size: 3rem; line-height: 1; color: #C41E24">2×</div><div style="font-weight: 500; margin-top: 6px">Small group sessions every week</div></div>
+<div class="rv-s d1"><div style="font-weight: 800; font-size: 3rem; line-height: 1">1</div><div style="font-weight: 500; margin-top: 6px">New workbook every week</div></div>
+<div class="rv-s d2"><div style="font-weight: 800; font-size: 3rem; line-height: 1">100%</div><div style="font-weight: 500; margin-top: 6px">Of workbooks marked by me</div></div>
+<div class="rv-s d3"><div style="font-weight: 800; font-size: 3rem; line-height: 1">$40</div><div style="font-weight: 500; margin-top: 6px">Per hour 1-on-1, members only</div></div>
+</div>
+</section>
+
+<section style="background: #0D2347">
+<div style="max-width: 1180px; margin: 0 auto; padding: 150px 24px">
+<p class="fill-dark" style="margin: 0; color: #FFFFFF; font-weight: 800; font-size: clamp(2.2rem, 5.6vw, 4.6rem); line-height: 1.06; letter-spacing: -0.03em">Every workbook is built on my method. The person who completes the most questions wins.</p>
+</div>
+</section>
+
+<section id="included" style="max-width: 1180px; margin: 0 auto; padding: 110px 24px; display: flex; flex-wrap: wrap; gap: 40px 72px">
+<div class="rv-l" style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; color: #C41E24">What's included</p>
+<h2 style="margin: 0; font-weight: 800; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05; letter-spacing: -0.02em">Everything for $60 a week</h2>
+</div>
+<div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<div class="rv-r" style="background: #FFFFFF; border-radius: 20px; padding: 22px 24px; display: flex; gap: 16px"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true" style="flex: none"><circle cx="15" cy="15" r="15" fill="#0D2347"/><path d="M9 15.5l4 4 8-8" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><div><strong>Small group sessions online, twice a week.</strong> Work through questions alongside other students who want to do well.</div></div>
+<div class="rv-r" style="background: #FFFFFF; border-radius: 20px; padding: 22px 24px; display: flex; gap: 16px"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true" style="flex: none"><circle cx="15" cy="15" r="15" fill="#0D2347"/><path d="M9 15.5l4 4 8-8" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><div><strong>A weekly workbook.</strong> The questions you need, handed out every week.</div></div>
+<div class="rv-r" style="background: #FFFFFF; border-radius: 20px; padding: 22px 24px; display: flex; gap: 16px"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true" style="flex: none"><circle cx="15" cy="15" r="15" fill="#0D2347"/><path d="M9 15.5l4 4 8-8" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><div><strong>Workbooks marked.</strong> I mark your workbook every week so you know exactly where you stand.</div></div>
+<div class="rv-r" style="background: #FFFFFF; border-radius: 20px; padding: 22px 24px; display: flex; gap: 16px"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true" style="flex: none"><circle cx="15" cy="15" r="15" fill="#0D2347"/><path d="M9 15.5l4 4 8-8" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><div><strong>Individualised help.</strong> A group program, with help aimed at you.</div></div>
+<div class="rv-r" style="background: #FFFFFF; border-radius: 20px; padding: 22px 24px; display: flex; gap: 16px"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true" style="flex: none"><circle cx="15" cy="15" r="15" fill="#C41E24"/><path d="M9 15.5l4 4 8-8" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><div><strong>1-on-1 lessons for $40 an hour.</strong> A members-only rate if you'd like extra time on your own.</div></div>
+</div>
+</section>
+
+<section style="background: #FFFFFF">
+<div style="max-width: 1180px; margin: 0 auto; padding: 110px 24px; display: flex; flex-direction: column; gap: 48px">
+<div class="rv" style="display: flex; flex-direction: column; gap: 12px; max-width: 42rem">
+<p style="margin: 0; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; color: #C41E24">Week by week</p>
+<h2 style="margin: 0; font-weight: 800; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05; letter-spacing: -0.02em">How a week works</h2>
+</div>
+<div style="display: flex; gap: 28px">
+<div aria-hidden="true" style="flex: none; width: 4px; border-radius: 4px; background: #C9D4E5; position: relative">
+<div class="line-grow" style="position: absolute; inset: 0; border-radius: 4px; background: #C41E24"></div>
+</div>
+<div style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 44px">
+<div class="rv-r" style="display: flex; flex-direction: column; gap: 6px"><span style="font-weight: 700; color: #C41E24">Start of the week</span><h3 style="margin: 0; font-size: 1.4rem">Get your workbook</h3><p style="margin: 0; color: #2C3B5A; max-width: 40rem">A new set of questions for the week, built on my method.</p></div>
+<div class="rv-r" style="display: flex; flex-direction: column; gap: 6px"><span style="font-weight: 700; color: #C41E24">Twice a week</span><h3 style="margin: 0; font-size: 1.4rem">Small group sessions</h3><p style="margin: 0; color: #2C3B5A; max-width: 40rem">Work through the content and questions together, with help when you're stuck.</p></div>
+<div class="rv-r" style="display: flex; flex-direction: column; gap: 6px"><span style="font-weight: 700; color: #C41E24">Through the week</span><h3 style="margin: 0; font-size: 1.4rem">Complete the questions</h3><p style="margin: 0; color: #2C3B5A; max-width: 40rem">Give every question 100%, and make sure you understand each one.</p></div>
+<div class="rv-r" style="display: flex; flex-direction: column; gap: 6px"><span style="font-weight: 700; color: #C41E24">End of the week</span><h3 style="margin: 0; font-size: 1.4rem">Marked and back to you</h3><p style="margin: 0; color: #2C3B5A; max-width: 40rem">I mark your workbook so you know what's left to fix, then the next one starts.</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<section style="max-width: 1180px; margin: 0 auto; padding: 110px 24px; display: flex; flex-direction: column; gap: 44px">
+<div class="rv" style="display: flex; flex-direction: column; gap: 12px; max-width: 42rem">
+<p style="margin: 0; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; color: #C41E24">Compare</p>
+<h2 style="margin: 0; font-weight: 800; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05; letter-spacing: -0.02em">Masterclass or 1-on-1?</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
+<div class="rv-l" style="background: #FFFFFF; border-radius: 28px; padding: 36px; display: flex; flex-direction: column; gap: 14px">
+<h3 style="margin: 0; font-size: 1.5rem; font-weight: 800">1-on-1 tutoring</h3>
+<div><span style="font-weight: 800; font-size: 2.6rem; line-height: 1">$50–70</span> <span style="color: #2C3B5A">per hour</span></div>
+<p style="margin: 0; color: #2C3B5A">Fully personalised lessons, priced by year level. Best if you want all the attention on you.</p>
+<a href="tutoring.html" style="align-self: flex-start; color: #0D2347; font-weight: 700">See 1-on-1 prices →</a>
+</div>
+<div class="rv-r" style="background: #0D2347; color: #FFFFFF; border-radius: 28px; padding: 36px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px"><h3 style="margin: 0; font-size: 1.5rem; font-weight: 800">Masterclass</h3><span style="background: #C41E24; font-weight: 700; font-size: 0.82rem; padding: 4px 12px; border-radius: 999px">Best value</span></div>
+<div><span style="font-weight: 800; font-size: 2.6rem; line-height: 1">$60</span> <span style="color: #D5DDEE">per week</span></div>
+<p style="margin: 0; color: #D5DDEE">Two group sessions, a weekly workbook marked by me, and individualised help. Add 1-on-1 lessons at $40 an hour.</p>
+<a href="contact.html" style="align-self: flex-start; color: #FFFFFF; font-weight: 700">Reserve a spot →</a>
+</div>
+</div>
+<div class="rv" style="background: #FFFFFF; border: 2px dashed #9FB2CF; border-radius: 22px; padding: 24px 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px">
+<div><div style="color: #2C3B5A; font-size: 0.95rem">Who it's for</div><div style="font-weight: 700">Year 12 only</div></div>
+<div><div style="color: #2C3B5A; font-size: 0.95rem">Courses</div><div style="font-weight: 700">Advanced, Extension 1, Extension 2</div></div>
+<div><div style="color: #2C3B5A; font-size: 0.95rem">Starts</div><div style="font-weight: 700">Week 5, depending on demand</div></div>
+<div><div style="color: #2C3B5A; font-size: 0.95rem">Sessions</div><div style="font-weight: 700">Online</div></div>
+</div>
+</section>
+
+<section style="max-width: 1180px; margin: 0 auto; padding: 0 24px 110px">
+<div class="rv-s" style="background: #C41E24; color: #FFFFFF; border-radius: 32px; padding: clamp(36px, 6vw, 72px); display: flex; flex-wrap: wrap; gap: 28px 40px; align-items: center; justify-content: space-between">
+<div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-weight: 800; font-size: clamp(2rem, 4.4vw, 3.2rem); line-height: 1.02; letter-spacing: -0.02em">Spots are limited.</h2>
+<p style="margin: 0; font-size: 1.15rem">Starting Week 5 for Year 12 students. Text me to reserve yours.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<a href="sms:0411522420" style="background: #FFFFFF; color: #0D2347; text-decoration: none; padding: 16px 28px; border-radius: 999px; font-weight: 800">Text 0411 522 420</a>
+<a href="contact.html" style="background: #0D2347; color: #FFFFFF; text-decoration: none; padding: 16px 28px; border-radius: 999px; font-weight: 700">Other ways to reach me</a>
+</div>
+</div>
+</section>
+
+<footer style="background: #08172F; color: #B9C5DC">
+<div style="max-width: 1180px; margin: 0 auto; padding: 28px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; font-size: 0.93rem">
+<span style="color: #FFFFFF; font-weight: 700">Vertex Academics · HSC Maths with Anton Anoop</span>
+<span>Text 0411 522 420</span>
+</div>
+</footer>
+
+</div>
+</body>
+</html>
